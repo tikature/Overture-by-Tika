@@ -24,8 +24,8 @@
 - [ ] `/productions/[slug]` case study page with `generateStaticParams`, prev/next
 
 ## Phase 4 — Repertoire, Experience, Laurels, Reviews
-- [ ] Academic timeline + skill bars (animated, with text levels)
-- [ ] Experience timeline (hide if empty) · Laurels grid · Reviews (hide if empty)
+- [x] Academic timeline + skill bars (animated, with text levels)
+- [x] Experience timeline (hide if empty) · Laurels grid · Reviews (hide if empty)
 
 ## Phase 5 — Contact & backend
 - [ ] Form with zod (shared schema), honeypot, states

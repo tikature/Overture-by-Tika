@@ -7,6 +7,9 @@ import TypingEffect from "@/components/sections/TypingEffect";
 import StageCard from "@/components/sections/StageCard";
 import TechTicker from "@/components/sections/TechTicker";
 import ProductionsGrid from "@/components/sections/ProductionsGrid";
+import RepertoireSection from "@/components/sections/RepertoireSection";
+import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
+import LaurelsGrid from "@/components/sections/LaurelsGrid";
 import Button from "@/components/ui/Button";
 import { LucideCompass, LucideScroll, LucideGithub, LucideLinkedin, LucideMail, LucideInstagram, LucideVideo } from "lucide-react";
 
@@ -250,36 +253,23 @@ export default function HomePage() {
         </section>
 
         {/* Repertoire */}
-        <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading eyebrow="MASTERCLASS & REPERTOIRE" title="Technical Proficiency" />
-            <p className="text-center text-softCream">Repertoire placeholder</p>
-          </div>
-        </section>
+        <RepertoireSection />
 
         {/* Experience */}
-        <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-darkCream/20 bg-darkBurgundy/20 relative">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading eyebrow="THE JOURNEY" title="Experience" />
-            <p className="text-center text-softCream">Experience timeline placeholder</p>
-          </div>
-        </section>
+        <ExperienceTimeline />
 
         {/* Laurels */}
-        <section id="certificates" className="py-24 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading eyebrow="THE HALL OF FAME" title="Laurels" />
-            <p className="text-center text-softCream">Certificates placeholder</p>
-          </div>
-        </section>
+        <LaurelsGrid />
 
         {/* Reviews */}
-        <section id="reviews" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-darkCream/20 bg-darkBurgundy/20 relative">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading eyebrow="CRITICS' REVIEWS" title="Testimonials" />
-            <p className="text-center text-softCream">Reviews placeholder (hidden when empty)</p>
-          </div>
-        </section>
+        {false && (
+          <section id="reviews" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-darkCream/20 bg-darkBurgundy/20 relative">
+            <div className="max-w-7xl mx-auto">
+              <SectionHeading eyebrow="CRITICS' REVIEWS" title="Testimonials" />
+              <p className="text-center text-softCream">Reviews placeholder (hidden when empty)</p>
+            </div>
+          </section>
+        )}
 
         {/* Contact */}
         <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
