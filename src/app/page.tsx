@@ -11,6 +11,7 @@ import RepertoireSection from "@/components/sections/RepertoireSection";
 import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
 import LaurelsGrid from "@/components/sections/LaurelsGrid";
 import ContactSection from "@/components/sections/ContactSection";
+import BlogSection from "@/components/sections/BlogSection";
 import Button from "@/components/ui/Button";
 import { LucideCompass, LucideScroll, LucideGithub, LucideLinkedin, LucideMail, LucideInstagram, LucideVideo } from "lucide-react";
 
@@ -261,6 +262,9 @@ export default function HomePage() {
 
         {/* Laurels */}
         <LaurelsGrid />
+
+        {/* Program Notes Blog */}
+        <BlogSection />
 
         {/* Reviews */}
         {false && (

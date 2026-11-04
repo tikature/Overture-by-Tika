@@ -3,6 +3,7 @@ import { Playfair_Display, Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { generateJsonLd } from "@/lib/seo";
+import { I18nProvider } from "@/components/providers/I18nProvider";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -96,7 +97,9 @@ export default function RootLayout({
           Skip to main content
         </a>
         <CurtainIntro />
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
         <Analytics />
         <SpeedInsights />
       </body>

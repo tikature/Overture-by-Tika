@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "overture": "Overture",
+    "theStage": "The Stage",
+    "repertoire": "Repertoire",
+    "productions": "Productions",
+    "laurels": "Laurels",
+    "curtainCall": "Curtain Call"
+  },
+  "hero": {
+    "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
+    "greeting": "Hi, I'm",
+    "typingPrefix": "Orchestrating ",
+    "description": "Frontend Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography.",
+    "ctaExplore": "Explore Productions",
+    "ctaResume": "Download Resume / CV"
+  },
+  "tech": {
+    "label": "THE TECHNICAL ENSEMBLE"
+  },
+  "about": {
+    "eyebrow": "PROSCENIUM & VISION",
+    "title": "The Story Behind the Stage",
+    "lead": "Years of conducting complex frontend architectures as a dramatic theatrical overture. Every layout is a stage, every interaction a cue, and every release an ovation.",
+    "stats": {
+      "years": "Years on Stage",
+      "productions": "Productions Staged",
+      "ovations": "Standing Ovations",
+      "readiness": "Backstage Readiness"
+    },
+    "principles": {
+      "interaction": {
+        "title": "Directing the Interaction",
+        "description": "Treating user journeys as scripted scenes where visual hierarchy, fluid micro-interactions, and flawless speed deliver undeniable drama."
+      },
+      "precision": {
+        "title": "Stagecraft & Precision",
+        "description": "Behind the velvet curtains lies rigorous engineering: maintainable component architecture, strict type safety, and impeccable performance standards."
+      }
+    },
+    "archCaption": "OPÉRA GARNIER • STAGECRAFT & MASTERY"
+  },
+  "productions": {
+    "eyebrow": "THE PLAYBILL",
+    "title": "Featured Productions & Acts",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ai": "AI"
+    },
+    "viewProduction": "View Production"
+  },
+  "repertoire": {
+    "eyebrow": "MASTERCLASS & REPERTOIRE",
+    "title": "Technical Proficiency",
+    "academicLineage": "Academic Lineage",
+    "techProficiency": "Technical Proficiency",
+    "levels": {
+      "advanced": "Advanced",
+      "proficient": "Proficient",
+      "familiar": "Familiar"
+    }
+  },
+  "experience": {
+    "eyebrow": "THE JOURNEY",
+    "title": "Experience"
+  },
+  "laurels": {
+    "eyebrow": "THE HALL OF FAME",
+    "title": "Laurels",
+    "verify": "Verify"
+  },
+  "contact": {
+    "eyebrow": "BACKSTAGE INQUIRIES & COMMISSION",
+    "title": "Send a Dispatch to the Maestro",
+    "subtitle": "Commission a premier digital stage, propose a principal engineering engagement, or discuss an artistic collaboration.",
+    "form": {
+      "name": "Your Name / Title",
+      "email": "Your Correspondence Email",
+      "subject": "Production Scope / Subject",
+      "message": "The Overture / Message",
+      "submit": "Send Dispatch ✉",
+      "sending": "Sending Dispatch...",
+      "success": "Your dispatch has reached the stage. I will reply soon.",
+      "error": "The dispatch could not be delivered. Please email me directly."
+    },
+    "availability": "Open to opportunities",
+    "location": "Indonesia"
+  },
+  "footer": {
+    "note": "Composed in Dark Burgundy, Vintage Burgundy, and Refined Cream",
+    "rights": "© {year} Dewi Atika Muthi"
+  },
+  "blog": {
+    "eyebrow": "PROGRAM NOTES",
+    "title": "Blog",
+    "subtitle": "Technical writings, architectural decisions, and behind-the-scenes notes from the stage.",
+    "empty": "No Performances Yet",
+    "emptyDesc": "The program notes are being written. Check back soon for technical articles and architectural deep-dives.",
+    "readMore": "Read Program Notes"
+  },
+  "notFound": {
+    "title": "The Curtain Has Fallen",
+    "description": "The act you're looking for isn't on the playbill. Perhaps the stage is still being set, or the performance has moved to another venue.",
+    "home": "Return to Overture",
+    "productions": "Browse Productions"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "id": "Indonesian"
+  },
+  "theme": {
+    "label": "Theme",
+    "dark": "Dark Burgundy",
+    "light": "Salon Cream"
+  }
+}

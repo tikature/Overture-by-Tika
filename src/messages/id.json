@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "overture": "Overture",
+    "theStage": "Panggung",
+    "repertoire": "Repertoire",
+    "productions": "Produksi",
+    "laurels": "Penghargaan",
+    "curtainCall": "Curtain Call"
+  },
+  "hero": {
+    "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
+    "greeting": "Halo, saya",
+    "typingPrefix": "Mengorkestrasi ",
+    "description": "Frontend Developer & Software Engineer yang membuat aplikasi web modern, tangguh, dan berkinerja tinggi. Memadukan keagungan teater dan estetika detail opera dengan rekayasa ketat, arsitektur komponen terukur, dan koreografi web yang mulus.",
+    "ctaExplore": "Jelajahi Produksi",
+    "ctaResume": "Unduh Resume / CV"
+  },
+  "tech": {
+    "label": "THE TECHNICAL ENSEMBLE"
+  },
+  "about": {
+    "eyebrow": "PROSCENIUM & VISION",
+    "title": "Kisah Di Balik Panggung",
+    "lead": "Tahun-tahun mengarahkan arsitektur frontend kompleks sebagai overtyur teatral yang dramatis. Setiap tata letak adalah panggung, setiap interaksi adalah isyarat, dan setiap rilis adalah ovasi.",
+    "stats": {
+      "years": "Tahun di Panggung",
+      "productions": "Produksi yang Dibawakan",
+      "ovations": "Ovasi Berdiri",
+      "readiness": "Kesiapan Backstage"
+    },
+    "principles": {
+      "interaction": {
+        "title": "Mengarahkan Interaksi",
+        "description": "Menganggap perjalanan pengguna sebagai adegan terskripsi di mana hierarki visual, mikro-interaksi mulus, dan kecepatan yang sempurna memberikan drama yang tak terbantahkan."
+      },
+      "precision": {
+        "title": "Stagecraft & Precision",
+        "description": "Di balik tirai samar terletak rekayasa yang ketat: arsitektur komponen yang terkelola, keamanan tipe yang ketat, dan standar performa yang tak tertandingi."
+      }
+    },
+    "archCaption": "OPÉRA GARNIER • STAGECRAFT & MASTERY"
+  },
+  "productions": {
+    "eyebrow": "THE PLAYBILL",
+    "title": "Produksi Unggulan & Akte",
+    "filters": {
+      "all": "Semua",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ai": "AI"
+    },
+    "viewProduction": "Lihat Produksi"
+  },
+  "repertoire": {
+    "eyebrow": "MASTERCLASS & REPERTOIRE",
+    "title": "Kemahiran Teknis",
+    "academicLineage": "Garis Keturunan Akademik",
+    "techProficiency": "Kemahiran Teknis",
+    "levels": {
+      "advanced": "Mahir",
+      "proficient": "Terampil",
+      "familiar": "Paham"
+    }
+  },
+  "experience": {
+    "eyebrow": "THE JOURNEY",
+    "title": "Pengalaman"
+  },
+  "laurels": {
+    "eyebrow": "THE HALL OF FAME",
+    "title": "Penghargaan",
+    "verify": "Verifikasi"
+  },
+  "contact": {
+    "eyebrow": "BACKSTAGE INQUIRIES & COMMISSION",
+    "title": "Kirim Surat ke Maestro",
+    "subtitle": "Pesan panggung digital premier, ajukan kerja sama engineering utama, atau diskusikan kolaborasi artistik.",
+    "form": {
+      "name": "Nama / Gelar Anda",
+      "email": "Email Korespondensi Anda",
+      "subject": "Ruang Lingkup Produksi / Subjek",
+      "message": "Overture / Pesan",
+      "submit": "Kirim Surat ✉",
+      "sending": "Mengirim Surat...",
+      "success": "Surat Anda telah sampai ke panggung. Saya akan membalas segera.",
+      "error": "Surat tidak dapat dikirim. Silakan email saya langsung."
+    },
+    "availability": "Terbuka untuk peluang",
+    "location": "Indonesia"
+  },
+  "footer": {
+    "note": "Dikarang dalam Dark Burgundy, Vintage Burgundy, dan Refined Cream",
+    "rights": "© {year} Dewi Atika Muthi"
+  },
+  "blog": {
+    "eyebrow": "CATATAN PROGRAM",
+    "title": "Blog",
+    "subtitle": "Tulisan teknis, keputusan arsitektur, dan catatan di balik layar dari panggung.",
+    "empty": "Belum Ada Pertunjukan",
+    "emptyDesc": "Catatan program sedang ditulis. Kembali nanti untuk artikel teknis dan analisis arsitektur mendalam.",
+    "readMore": "Baca Catatan Program"
+  },
+  "notFound": {
+    "title": "Tirai Telah Turun",
+    "description": "Akte yang Anda cari tidak ada di playbill. Mungkin panggung masih disiapkan, atau pertunjukan telah pindah ke tempat lain.",
+    "home": "Kembali ke Overture",
+    "productions": "Jelajahi Produksi"
+  },
+  "language": {
+    "label": "Bahasa",
+    "en": "English",
+    "id": "Indonesia"
+  },
+  "theme": {
+    "label": "Tema",
+    "dark": "Dark Burgundy",
+    "light": "Salon Cream"
+  }
+}

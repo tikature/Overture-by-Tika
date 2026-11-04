@@ -40,7 +40,7 @@
 - [x] Lighthouse mobile ≥ targets in PRD §4; fix regressions
 
 ## Phase 7 — Optional extras (ask first)
-- [ ] "Program Notes" blog (MDX) · Indonesian/English toggle (`next-intl`) · light "Salon Cream" theme toggle
+- [x] "Program Notes" blog (MDX) · Indonesian/English toggle (`next-intl`) · light "Salon Cream" theme toggle
 
 ## Phase 8 — Ship
 - [ ] Follow `docs/DEPLOY.md`; fill every TODO(user) leftover list; final acceptance checklist from PRD §6

@@ -1,20 +1,28 @@
+"use client";
+
 import React from "react";
-import { siteConfig } from "@/data/site";
+import { useI18n } from "@/components/providers/I18nProvider";
 import ContactForm from "@/components/sections/ContactForm";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { LucideGithub, LucideLinkedin, LucideMail } from "lucide-react";
+import { siteConfig } from "@/data/site";
 
 export default function ContactSection() {
+  const { t } = useI18n();
+
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          eyebrow="BACKSTAGE INQUIRIES & COMMISSION"
+          eyebrow={t("contact.eyebrow")}
           title={
-            <>Send a Dispatch <span className="italic text-darkCream font-serif">to the Maestro</span></>
+            <>
+              {t("contact.title").replace("to the Maestro", "")}{" "}
+              <span className="italic text-darkCream font-serif">to the Maestro</span>
+            </>
           }
         >
-          Commission a premier digital stage, propose a principal engineering engagement, or discuss an artistic collaboration.
+          {t("contact.subtitle")}
         </SectionHeading>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
@@ -66,9 +74,9 @@ export default function ContactSection() {
             <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-cream animate-pulse" />
-                <span className="text-xs font-opera uppercase tracking-wider text-cream font-bold">Status</span>
+                <span className="text-xs font-opera uppercase tracking-wider text-cream font-bold">{t("theme.label")}</span>
               </div>
-              <p className="text-softCream/80 text-sm font-body">{siteConfig.availability}</p>
+              <p className="text-softCream/80 text-sm font-body">{t("contact.availability")}</p>
             </div>
 
             {/* Location */}

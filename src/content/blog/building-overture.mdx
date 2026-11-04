@@ -1,0 +1,95 @@
+---
+title: "Building Overture: An Opera-Themed Portfolio with Next.js 15"
+date: "2024-11-04"
+excerpt: "A deep dive into the architectural decisions behind this portfolio—ambient stage animations, type-safe data layer, and theatrical design tokens."
+tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+---
+
+# Building Overture: An Opera-Themed Portfolio with Next.js 15
+
+When I set out to build this portfolio, I wanted something that reflected both my engineering rigor and my appreciation for theatrical aesthetics. The result is **Overture by Atika**—a single-page portfolio with an opera-house metaphor woven through every interaction.
+
+## The Design System: Design Tokens as Sheet Music
+
+Rather than hard-coding colors and spacing, I extracted every visual token from the approved Stitch design into Tailwind v4's `@theme` directive:
+
+```css
+@theme {
+  --color-burgundy: #800020;
+  --color-vintage-burgundy: #9B1D30;
+  --color-wine-red: #B0303C;
+  --color-cream: #FFF5E1;
+  --color-ivory-cream: #F7ECD4;
+  --color-soft-cream: #EFE2C6;
+  --color-dark-cream: #DCC8A3;
+  --color-deep-abyss: #1B0509;
+  
+  --font-display: var(--font-playfair), serif;
+  --font-opera: var(--font-cinzel), serif;
+  --font-body: var(--font-jakarta), sans-serif;
+}
+```
+
+This approach ensures **zero arbitrary hex values** in components—everything maps to a semantic token.
+
+## Ambient Stage: CSS-First Animations
+
+The floating suits, rising embers, and pulsing glows run entirely on CSS keyframes defined in `globals.css`. The `AmbientStage` component simply renders the elements with the appropriate animation classes:
+
+```tsx
+<div className="card-suit-diamond animate-suit-drift-1" style={{ top: "6%", left: "4%" }} />
+```
+
+Reduced motion is respected via a single media query:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .animate-suit-drift-1,
+  .animate-spotlight-pulse,
+  .animate-ember-rise {
+    animation: none !important;
+    opacity: 0.35 !important;
+  }
+}
+```
+
+## Type-Safe Data Layer
+
+All copy lives in `src/data/*.ts` files—never in components. This makes content updates trivial and enables full TypeScript checking:
+
+```ts
+// src/data/site.ts
+export const siteConfig = {
+  brand: "Overture by Atika",
+  fullName: "Dewi Atika Muthi",
+  displayName: "Tika",
+  roles: ["Digital Stages", "Frontend Virtuoso", "Software Engineer", "Component Architect"],
+  // ...
+};
+```
+
+## The Hero Stage Card
+
+The hero's right column features a `StageCard` with a portrait that pops out at 140% width with a bottom fade mask—exactly matching the Stitch reference:
+
+```tsx
+<div className="absolute top-[42px] left-1/2 -translate-x-1/2 w-[140%]">
+  <Image
+    style={{
+      WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 95%)",
+      maskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 95%)",
+    }}
+    className="group-hover:scale-[1.02] transition-transform duration-500"
+  />
+</div>
+```
+
+## What's Next
+
+- **Phase 7**: MDX blog ("Program Notes"), Indonesian/English toggle, light theme
+- **Case studies**: `/productions/[slug]` pages with prev/next navigation
+- **Lighthouse audit**: Targeting ≥90 across all metrics
+
+---
+
+*This post was written in MDX and rendered with `next-mdx-remote`. The source lives in `src/content/blog/building-overture.mdx`.*
