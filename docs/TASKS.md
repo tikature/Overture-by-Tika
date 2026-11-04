@@ -1,26 +1,26 @@
 # TASKS — build in order. Tick boxes as you go. One phase per session.
 
 ## Phase 0 — Scaffold
-- [ ] `pnpm create next-app` equivalent in current dir (TS, App Router, `src/`, Tailwind, ESLint, no Turbopack flag needed, import alias `@/*`) — keep existing `AGENTS.md`, `docs/`, `reference/`, `public/images`, `opencode.json`, `vercel.json`, `.env.example`, `.nvmrc`, `.gitignore`
-- [ ] Install allowed deps (PRD §5); add scripts: `typecheck`, `lint`, `format`
-- [ ] `globals.css` with `@theme` tokens + utility classes from UI-REFERENCE
-- [ ] `next/font` Playfair/Cinzel/Plus Jakarta wired in `layout.tsx`; `lang="en"`, body bg `deep-abyss`
-- [ ] `src/data/*` typed from CONTENT.md; `lib/utils.ts` (`cn`)
-- [ ] Verify: `pnpm build` passes; commit "chore: scaffold"
+- [x] `pnpm create next-app` equivalent in current dir (TS, App Router, `src/`, Tailwind, ESLint, no Turbopack flag needed, import alias `@/*`) — keep existing `AGENTS.md`, `docs/`, `reference/`, `public/images`, `opencode.json`, `vercel.json`, `.env.example`, `.nvmrc`, `.gitignore`
+- [x] Install allowed deps (PRD §5); add scripts: `typecheck`, `lint`, `format`
+- [x] `globals.css` with `@theme` tokens + utility classes from UI-REFERENCE
+- [x] `next/font` Playfair/Cinzel/Plus Jakarta wired in `layout.tsx`; `lang="en"`, body bg `deep-abyss`
+- [x] `src/data/*` typed from CONTENT.md; `lib/utils.ts` (`cn`)
+- [x] Verify: `pnpm build` passes; commit "chore: scaffold"
 
 ## Phase 1 — Shell & atmosphere
-- [ ] `AmbientStage` (glows, embers, suits responsive count, reduced-motion)
-- [ ] `Navbar` (desktop pill + active section + mobile overlay menu), skip-link, scroll progress
-- [ ] `Footer`, `SectionHeading`, `Button`, `Chip`, `Reveal` primitives
+- [x] `AmbientStage` (glows, embers, suits responsive count, reduced-motion)
+- [x] `Navbar` (desktop pill + active section + mobile overlay menu), skip-link, scroll progress
+- [x] `Footer`, `SectionHeading`, `Button`, `Chip`, `Reveal` primitives
 
 ## Phase 2 — Hero + Technical Ensemble
-- [ ] Hero left copy, typing effect (client), CTAs, social pill
-- [ ] Stage card with portrait pop-out exactly per UI-REFERENCE
-- [ ] Tech ticker / marquee
+- [x] Hero left copy, typing effect (client), CTAs, social pill
+- [x] Stage card with portrait pop-out exactly per UI-REFERENCE
+- [x] Tech ticker / marquee
 
 ## Phase 3 — About + Productions
-- [ ] Stats with count-up, `ProsceniumArch` SVG, principle cards
-- [ ] Productions bento grid + category filter
+- [x] Stats with count-up, `ProsceniumArch` SVG, principle cards
+- [x] Productions bento grid + category filter
 - [ ] `/productions/[slug]` case study page with `generateStaticParams`, prev/next
 
 ## Phase 4 — Repertoire, Experience, Laurels, Reviews

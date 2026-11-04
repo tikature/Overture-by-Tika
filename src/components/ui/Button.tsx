@@ -1,18 +1,22 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonBaseProps {
   variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
-  asChild?: boolean;
+  className?: string;
+  href?: string;
 }
+
+type ButtonProps = ButtonBaseProps & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps>;
 
 export default function Button({
   variant = "primary",
   size = "md",
   className,
   children,
+  href,
   ...props
 }: ButtonProps) {
   const variants = {
@@ -30,14 +34,27 @@ export default function Button({
     lg: "px-8 py-4 text-base",
   };
 
+  const baseClasses = cn(
+    "rounded-full font-opera font-bold uppercase tracking-widest transition-all duration-300 inline-flex items-center justify-center",
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={baseClasses}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
-      className={cn(
-        "rounded-full font-opera font-bold uppercase tracking-widest transition-all duration-300",
-        variants[variant],
-        sizes[size],
-        className
-      )}
+      className={baseClasses}
       {...props}
     >
       {children}
