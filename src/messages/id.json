@@ -2,15 +2,16 @@
   "nav": {
     "overture": "Overture",
     "theStage": "Panggung",
-    "repertoire": "Repertoire",
+    "repertoire": "Repertoar",
     "productions": "Produksi",
     "laurels": "Penghargaan",
-    "curtainCall": "Curtain Call"
+    "curtainCall": "Tirai Penutup"
   },
   "hero": {
     "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
     "greeting": "Halo, saya",
     "typingPrefix": "Mengorkestrasi ",
+    "typingRoles": ["Panggung Digital", "Frontend Virtuoso", "Software Engineer", "Arsitek Komponen"],
     "description": "Frontend Developer & Software Engineer yang membuat aplikasi web modern, tangguh, dan berkinerja tinggi. Memadukan keagungan teater dan estetika detail opera dengan rekayasa ketat, arsitektur komponen terukur, dan koreografi web yang mulus.",
     "ctaExplore": "Jelajahi Produksi",
     "ctaResume": "Unduh Resume / CV"
@@ -115,5 +116,12 @@
     "label": "Tema",
     "dark": "Dark Burgundy",
     "light": "Salon Cream"
+  },
+  "stageCard": {
+    "edition": "STAGE VIRTUOSO EDITION",
+    "maestro": "PRINCIPAL MAESTRO",
+    "royalStage": "THE ROYAL STAGE",
+    "subtitle": "Grand Théâtre • Lead Software Composition",
+    "version": "MAESTRO V4.0"
   }
 }

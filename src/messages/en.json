@@ -11,6 +11,7 @@
     "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
     "greeting": "Hi, I'm",
     "typingPrefix": "Orchestrating ",
+    "typingRoles": ["Digital Stages", "Frontend Virtuoso", "Software Engineer", "Component Architect"],
     "description": "Frontend Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography.",
     "ctaExplore": "Explore Productions",
     "ctaResume": "Download Resume / CV"
@@ -115,5 +116,12 @@
     "label": "Theme",
     "dark": "Dark Burgundy",
     "light": "Salon Cream"
+  },
+  "stageCard": {
+    "edition": "STAGE VIRTUOSO EDITION",
+    "maestro": "PRINCIPAL MAESTRO",
+    "royalStage": "THE ROYAL STAGE",
+    "subtitle": "Grand Théâtre • Lead Software Composition",
+    "version": "MAESTRO V4.0"
   }
 }

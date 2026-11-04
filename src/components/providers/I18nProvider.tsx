@@ -22,32 +22,45 @@ async function loadTranslations() {
   return { en: en.default, id: id.default } as const;
 }
 
-function getInitialLocale(): Locale {
-  if (typeof window === "undefined") return defaultLocale;
-  const saved = localStorage.getItem("locale") as Locale | null;
-  return saved && locales.includes(saved) ? saved : defaultLocale;
-}
-
-function getInitialTheme(): "dark" | "light" {
-  if (typeof window === "undefined") return "dark";
-  return (localStorage.getItem("theme") as "dark" | "light" | null) ?? "dark";
-}
-
 function fallbackT(key: string): string {
   return key;
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
-  const [theme, setThemeState] = useState<"dark" | "light">(getInitialTheme);
+  // Always use default values for SSR - no localStorage access during render
+  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const [theme, setThemeState] = useState<"dark" | "light">("dark");
   const [translations, setTranslations] = useState<Record<Locale, Record<string, unknown>> | null>(null);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    // Hydrate from localStorage after mount (client-only)
+    const savedLocale = localStorage.getItem("locale") as Locale | null;
+    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+    
+    if (savedLocale && locales.includes(savedLocale)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setLocaleState(savedLocale);
+    }
+    if (savedTheme) {
+      setThemeState(savedTheme);
+    }
+    
+    // Apply theme immediately
+    document.documentElement.classList.toggle("light-theme", savedTheme === "light");
+    
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     loadTranslations().then(setTranslations);
-    
-    // Apply theme on mount
-    document.documentElement.classList.toggle("light-theme", theme === "light");
-  }, [theme]);
+  }, []);
+
+  useEffect(() => {
+    if (hydrated) {
+      document.documentElement.classList.toggle("light-theme", theme === "light");
+    }
+  }, [theme, hydrated]);
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
@@ -84,7 +97,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     return value;
   };
 
-  // Always provide context, even before translations load
+  // ALWAYS provide context - never render children without it
   const contextValue: I18nContextType = {
     locale,
     setLocale,

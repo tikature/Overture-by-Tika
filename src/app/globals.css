@@ -14,15 +14,6 @@
   --color-warm-cream: #E6D7B9;
   --color-dark-cream: #DCC8A3;
 
-  /* Light theme (Salon Cream) */
-  --color-salon-cream: #FFF5E1;
-  --color-salon-warm: #F7ECD4;
-  --color-salon-soft: #EFE2C6;
-  --color-salon-burgundy: #800020;
-  --color-salon-vintage: #9B1D30;
-  --color-salon-wine: #B0303C;
-  --color-salon-ink: #3B0A12;
-
   --font-display: var(--font-playfair), serif;
   --font-opera: var(--font-cinzel), serif;
   --font-body: var(--font-jakarta), sans-serif;
@@ -53,16 +44,18 @@
 
   .light-theme {
     --color-deep-abyss: #FFF5E1;
-    --color-soft-cream: #3B0A12;
+    --color-soft-cream: #1B0509;
     --color-obsidian-burgundy: #F7ECD4;
     --color-dark-burgundy: #EFE2C6;
     --color-burgundy: #800020;
     --color-vintage-burgundy: #9B1D30;
     --color-wine-red: #B0303C;
-    --color-cream: #3B0A12;
+    --color-cream: #1B0509;
     --color-ivory-cream: #EFE2C6;
     --color-dark-cream: #9B1D30;
     --color-warm-cream: #B0303C;
+    --color-oxblood: #5E0F1A;
+    --color-dark-burgundy: #3B0A12;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -19,12 +19,12 @@ export default function StageCard() {
           
           {/* Top Header Bar */}
           <div className="relative z-20 flex items-center justify-between px-1 pt-1">
-            <span className="text-[10.5px] font-opera uppercase tracking-[0.22em] text-darkCream/95 font-semibold drop-shadow-sm">
+            <span className="whitespace-nowrap text-[10.5px] font-opera uppercase tracking-[0.22em] text-darkCream/95 font-semibold drop-shadow-sm">
               STAGE VIRTUOSO EDITION
             </span>
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#3d0913]/90 border border-wineRed/40 shadow-inner">
-              <span className="w-2 h-2 rounded-full bg-wineRed shadow-[0_0_6px_#B0303C]" />
-              <span className="text-[9.5px] font-opera text-cream uppercase tracking-widest font-bold">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#3d0913]/90 border border-wineRed/40 shadow-inner whitespace-nowrap">
+              <span className="w-2.5 h-2.5 rounded-full bg-wineRed shadow-[0_0_8px_#B0303C,0_0_12px_#B0303C]" />
+              <span className="whitespace-nowrap text-[9.5px] font-opera text-cream uppercase tracking-widest font-bold">
                 PRINCIPAL MAESTRO
               </span>
             </div>
@@ -44,7 +44,7 @@ export default function StageCard() {
                 Grand Théâtre • Lead Software Composition
               </p>
             </div>
-            <span className="text-[10.5px] font-opera px-3 py-1 rounded bg-[#4a0a16] text-cream border border-[#800020]/60 shadow-[0_0_12px_rgba(128,0,32,0.6)] font-bold tracking-widest">
+            <span className="whitespace-nowrap text-[10.5px] font-opera px-3 py-1 rounded bg-[#4a0a16] text-cream border border-[#800020]/60 shadow-[0_0_12px_rgba(128,0,32,0.6)] font-bold tracking-widest">
               MAESTRO V4.0
             </span>
           </div>
