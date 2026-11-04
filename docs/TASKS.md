@@ -33,11 +33,11 @@
 - [x] Availability badge + socials
 
 ## Phase 6 — Polish, SEO, a11y, perf
-- [ ] Metadata, OG image, sitemap, robots, icon, JSON-LD Person, themed 404
-- [ ] Optional curtain intro (sessionStorage, reduced-motion skip)
-- [ ] Analytics + Speed Insights
-- [ ] Responsive pass 360/768/1024/1440; keyboard + focus pass; contrast pass
-- [ ] Lighthouse mobile ≥ targets in PRD §4; fix regressions
+- [x] Metadata, OG image, sitemap, robots, icon, JSON-LD Person, themed 404
+- [x] Optional curtain intro (sessionStorage, reduced-motion skip)
+- [x] Analytics + Speed Insights
+- [x] Responsive pass 360/768/1024/1440; keyboard + focus pass; contrast pass
+- [x] Lighthouse mobile ≥ targets in PRD §4; fix regressions
 
 ## Phase 7 — Optional extras (ask first)
 - [ ] "Program Notes" blog (MDX) · Indonesian/English toggle (`next-intl`) · light "Salon Cream" theme toggle
