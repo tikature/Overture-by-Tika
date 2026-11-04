@@ -10,6 +10,7 @@ import ProductionsGrid from "@/components/sections/ProductionsGrid";
 import RepertoireSection from "@/components/sections/RepertoireSection";
 import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
 import LaurelsGrid from "@/components/sections/LaurelsGrid";
+import ContactSection from "@/components/sections/ContactSection";
 import Button from "@/components/ui/Button";
 import { LucideCompass, LucideScroll, LucideGithub, LucideLinkedin, LucideMail, LucideInstagram, LucideVideo } from "lucide-react";
 
@@ -272,12 +273,7 @@ export default function HomePage() {
         )}
 
         {/* Contact */}
-        <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading eyebrow="BACKSTAGE INQUIRIES & COMMISSION" title="Send a Dispatch to the Maestro" />
-            <p className="text-center text-softCream">Contact form placeholder</p>
-          </div>
-        </section>
+        <ContactSection />
       </main>
       <Footer />
     </>

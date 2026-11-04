@@ -28,9 +28,9 @@
 - [x] Experience timeline (hide if empty) · Laurels grid · Reviews (hide if empty)
 
 ## Phase 5 — Contact & backend
-- [ ] Form with zod (shared schema), honeypot, states
-- [ ] `app/api/contact/route.ts` with Resend; 503 fallback → mailto
-- [ ] Availability badge + socials
+- [x] Form with zod (shared schema), honeypot, states
+- [x] `app/api/contact/route.ts` with Resend; 503 fallback → mailto
+- [x] Availability badge + socials
 
 ## Phase 6 — Polish, SEO, a11y, perf
 - [ ] Metadata, OG image, sitemap, robots, icon, JSON-LD Person, themed 404
