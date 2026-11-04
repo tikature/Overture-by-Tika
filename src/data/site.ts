@@ -1,0 +1,25 @@
+export const siteConfig = {
+  brand: "Overture by Atika",
+  fullName: "Dewi Atika Muthi",
+  displayName: "Tika",
+  title: "Frontend Developer • Software Engineer",
+  roles: [
+    "Digital Stages",
+    "Frontend Virtuoso",
+    "Software Engineer",
+    "Component Architect",
+  ],
+  tagline: "Orchestrating Software Engineer",
+  description:
+    "Frontend Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography.",
+  email: "detikaa10@gmail.com",
+  github: "https://github.com/tikature",
+  linkedin: "https://www.linkedin.com/in/dewi-atika-muthi/",
+  instagram: "",
+  tiktok: "",
+  location: "Indonesia",
+  resume: "/resume/Dewi-Atika-Muthi-CV.pdf",
+  availability: "Open to opportunities",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://overture-by-atika.vercel.app",
+  footerNote: "Composed in Dark Burgundy, Vintage Burgundy, and Refined Cream",
+};

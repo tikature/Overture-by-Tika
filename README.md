@@ -1,25 +1,36 @@
-# Overture by Atika — Starter Kit untuk OpenCode
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Kit ini berisi semua file acuan agar AI Agent (OpenCode) bisa membangun portfolio dari nol sampai siap deploy ke Vercel.
+## Getting Started
 
-## Isi
-- `AGENTS.md` — aturan utama, dibaca OpenCode otomatis
-- `opencode.json` — memuat docs penting ke konteks agent
-- `PROMPT.md` — prompt utama untuk ditempel ke OpenCode
-- `docs/` — PRD, UI-REFERENCE, CONTENT, ASSETS, TASKS, DEPLOY, DESIGN (asli dari Stitch)
-- `reference/` — `screen.png`, `code.html`, `color_palette.png`, + gambar asli
-- `public/images/` — foto (`atika.webp`) dan 4 simbol kartu (`suits/*.webp`) yang sudah dioptimasi
-- `.opencode/command/` — custom command: `/phase 0`, `/review`, `/deploy-check`
-- `vercel.json`, `.env.example`, `.nvmrc`, `.gitignore`
+First, run the development server:
 
-## Cara pakai
-1. Ekstrak folder, buka terminal di dalamnya, jalankan `git init`.
-2. Jalankan `opencode`, (tidak perlu `/init`, `AGENTS.md` sudah ada).
-3. Tempel isi `PROMPT.md`. Mulai di mode Plan, lalu pindah ke Build.
-4. Setelah tiap phase selesai, cek hasilnya (`pnpm dev`), lalu balas "next" atau pakai `/phase 1`, `/phase 2`, dst.
-5. Isi semua `TODO(user)` di `docs/CONTENT.md` (statistik, periode kuliah, link proyek, pengalaman, dll.) dan taruh CV di `public/resume/Dewi-Atika-Muthi-CV.pdf`.
-6. Deploy: ikuti `docs/DEPLOY.md` (push ke GitHub → Import di Vercel → isi env vars).
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Catatan penting
-- Vue.js tidak bisa dipakai sebagai framework bersamaan dengan Next.js/React, jadi Vue hanya tampil sebagai chip skill.
-- Konten proyek/sertifikat/pendidikan di `CONTENT.md` diberi tanda VERIFY, mohon dicek ulang. Proyek contoh dari Stitch (Invoice AI, dll.) sengaja tidak dipakai.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
