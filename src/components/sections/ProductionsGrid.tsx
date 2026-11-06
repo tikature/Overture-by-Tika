@@ -164,13 +164,26 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                   </div>
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-darkCream/10">
-                  <a
-                    href={`/productions/${project.slug}`}
-                    className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-darkCream hover:text-cream transition-colors"
-                  >
-                    <span>View Production</span>
-                    <LucideArrowUpRight className="w-4 h-4 text-wineRed" />
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-darkCream hover:text-cream transition-colors"
+                    >
+                      <span>View Production</span>
+                      <LucideArrowUpRight className="w-4 h-4 text-wineRed" />
+                    </a>
+                  )}
+                  {(!project.liveUrl || project.liveUrl === "") && (
+                    <a
+                      href={`/productions/${project.slug}`}
+                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-darkCream hover:text-cream transition-colors"
+                    >
+                      <span>View Production</span>
+                      <LucideArrowUpRight className="w-4 h-4 text-wineRed" />
+                    </a>
+                  )}
                   <div className="flex items-center space-x-3">
                     {project.repoUrl && (
                       <a
