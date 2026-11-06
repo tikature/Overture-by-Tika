@@ -25,6 +25,13 @@ export default async function RehearsalLogSection() {
     return intensityColors[idx];
   }
 
+  // Responsive cell sizes: 8px on mobile, 10px on sm, 12px on lg
+  const cellStyles = {
+    xs: 8,
+    sm: 10,
+    lg: 12,
+  };
+
   return (
     <section id="activity" className="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-darkCream/20 bg-darkBurgundy/20">
       <div className="max-w-7xl mx-auto">
@@ -49,16 +56,16 @@ export default async function RehearsalLogSection() {
                 Contribution Calendar (Last Year)
               </h3>
               <div className="overflow-x-auto" role="img" aria-label={`GitHub contributions heatmap. Total contributions: ${contributions.total}. Longest streak: ${contributions.longestStreak} days. Current streak: ${contributions.currentStreak} days.`}>
-                <div className="grid grid-cols-53 gap-1 min-w-max" style={{ gridTemplateColumns: "repeat(53, 10px)" }}>
+                <div className="grid gap-1 min-w-max" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
                   {rawWeeks.length > 0 ? (
                     rawWeeks.map((week, weekIdx) => (
-                      <div key={weekIdx} className="flex flex-col gap-1" style={{ minWidth: "10px" }}>
+                      <div key={weekIdx} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
                         {week.contributionDays.map((day, dayIdx) => (
                           <div
                             key={dayIdx}
-                            className={`w-[10px] h-[10px] rounded ${getIntensityClass(day.contributionCount)}`}
+                            className={`rounded ${getIntensityClass(day.contributionCount)} w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px]`}
                             title={`${day.contributionCount} contributions on ${day.date}`}
-                            style={{ width: "10px", height: "10px" }}
+                            style={{ width: "8px", height: "8px" }}
                           />
                         ))}
                       </div>
@@ -66,8 +73,8 @@ export default async function RehearsalLogSection() {
                   ) : (
                     // fallback: empty grid with 53 columns
                     Array.from({ length: 53 }).map((_, i) => (
-                      <div key={i} className="flex flex-col gap-1" style={{ minWidth: "10px" }}>
-                        <div className="w-[10px] h-[10px] rounded bg-oxblood/30" style={{ width: "10px", height: "10px" }} />
+                      <div key={i} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
+                        <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px] rounded bg-oxblood/30" style={{ width: "8px", height: "8px" }} />
                       </div>
                     ))
                   )}
@@ -75,7 +82,7 @@ export default async function RehearsalLogSection() {
               </div>
 
               {/* Month labels */}
-              <div className="flex gap-px mt-2 overflow-x-auto min-w-max" style={{ gridTemplateColumns: "repeat(53, 10px)" }}>
+              <div className="flex gap-px mt-2 overflow-x-auto min-w-max" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
                 {Array.from({ length: 53 }).map((_, i) => {
                   const date = new Date();
                   date.setDate(date.getDate() - (52 - i) * 7);
@@ -83,8 +90,8 @@ export default async function RehearsalLogSection() {
                   return (
                     <div
                       key={i}
-                      className="w-[10px] text-[9px] text-warmCream/50 font-opera uppercase tracking-wider text-center"
-                      style={{ width: "10px" }}
+                      className="w-[8px] sm:w-[10px] lg:w-[12px] text-[8px] sm:text-[9px] lg:text-[10px] text-warmCream/50 font-opera uppercase tracking-wider text-center"
+                      style={{ width: "8px" }}
                     >
                       {isMonthStart ? date.toLocaleDateString("en-US", { month: "short" }) : ""}
                     </div>
@@ -93,7 +100,7 @@ export default async function RehearsalLogSection() {
               </div>
 
               {/* Legend */}
-              <div className="flex items-center gap-4 mt-6 text-xs text-warmCream/70">
+              <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-warmCream/70">
                 <span>Less</span>
                 <div className="flex gap-1">
                   {intensityColors.map((c, i) => (
@@ -104,7 +111,7 @@ export default async function RehearsalLogSection() {
               </div>
 
               {/* Stats tiles */}
-              <div className="grid grid-cols-3 gap-4 mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                 <div className="bg-darkBurgundy/60 border border-darkCream/30 rounded-2xl p-4 text-center">
                   <div className="text-2xl sm:text-3xl font-display font-bold text-cream">{contributions.total}</div>
                   <div className="text-[11px] font-opera uppercase tracking-wider text-warmCream/70 mt-1">Contributions (yr)</div>

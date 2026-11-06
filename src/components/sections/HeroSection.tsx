@@ -90,10 +90,6 @@ export default function HeroSection({ publicRepos, certificatesCount, availabili
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center min-w-0">
         {/* Hero Left Column */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-darkBurgundy/60 border border-darkCream/30 backdrop-blur-md shadow-[0_0_15px_rgba(128,0,32,0.4)]">
-            <span className="w-2 h-2 rounded-full bg-cream shadow-[0_0_8px_#FFF5E1]"></span>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-ivoryCream font-opera font-bold">{t("hero.eyebrow")}</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cream font-display tracking-tight leading-[1.15]">
             {t("hero.greeting")} <span className="font-opera bg-gradient-to-r from-cream via-ivoryCream to-darkCream bg-clip-text text-transparent inline-block pr-2">{siteConfig.displayName.toUpperCase()}</span>
           </h1>
