@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import { Playfair_Display, Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { generateJsonLd } from "@/lib/seo";
 import { I18nProvider } from "@/components/providers/I18nProvider";
+import { CurtainIntro } from "@/components/layout/CurtainIntro";
+import { locales, Locale, defaultLocale } from "@/lib/i18n";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     description: "Portfolio of Dewi Atika Muthi — frontend and full-stack engineer building web and mobile apps with Next.js, React, TypeScript, Laravel and Flutter.",
   },
   verification: {
-    google: "TODO",
+    google: "",
   },
 };
 
@@ -74,15 +77,39 @@ function JsonLd() {
   );
 }
 
-export default function RootLayout({
+async function getLocaleFromCookie(): Promise<Locale> {
+  const cookieStore = await cookies();
+  const localeCookie = cookieStore.get("locale");
+  if (localeCookie && locales.includes(localeCookie.value as Locale)) {
+    return localeCookie.value as Locale;
+  }
+  return defaultLocale;
+}
+
+async function getThemeFromCookie(): Promise<"dark" | "light"> {
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get("theme");
+  return (themeCookie?.value as "dark" | "light") ?? "dark";
+}
+
+async function getMessages(locale: Locale) {
+  const messages = (await import(`@/messages/${locale}.json`)).default;
+  return messages;
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocaleFromCookie();
+  const initialTheme = await getThemeFromCookie();
+  const messages = await getMessages(locale);
+
   return (
     <html
-      lang="en"
-      className={`${playfair.variable} ${cinzel.variable} ${jakarta.variable} h-full antialiased scroll-smooth`}
+      lang={locale}
+      className={`${playfair.variable} ${cinzel.variable} ${jakarta.variable} h-full antialiased scroll-smooth ${initialTheme === "light" ? "light-theme" : ""}`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -97,40 +124,12 @@ export default function RootLayout({
           Skip to main content
         </a>
         <CurtainIntro />
-        <I18nProvider>
+        <I18nProvider locale={locale} messages={messages} initialTheme={initialTheme}>
           {children}
         </I18nProvider>
         <Analytics />
         <SpeedInsights />
       </body>
     </html>
-  );
-}
-
-function CurtainIntro() {
-  if (typeof window === "undefined") return null;
-  
-  return (
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function() {
-            if (sessionStorage.getItem('curtainSeen')) return;
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            sessionStorage.setItem('curtainSeen', 'true');
-            var style = document.createElement('style');
-            style.textContent = '@keyframes curtainOpen { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } } .curtain-panel { position: fixed; top: 0; bottom: 0; width: 50%; background: #1B0509; z-index: 9999; pointer-events: none; animation: curtainOpen 1.2s cubic-bezier(0.16,1,0.3,1) forwards; } .curtain-panel.left { left: 0; } .curtain-panel.right { right: 0; animation-direction: reverse; transform-origin: right; }';
-            document.head.appendChild(style);
-            var left = document.createElement('div');
-            left.className = 'curtain-panel left';
-            var right = document.createElement('div');
-            right.className = 'curtain-panel right';
-            document.body.appendChild(left);
-            document.body.appendChild(right);
-            setTimeout(function() { left.remove(); right.remove(); }, 1200);
-          })();
-        `,
-      }}
-    />
   );
 }

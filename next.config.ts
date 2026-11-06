@@ -11,6 +11,21 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "opengraph.githubassets.com" },
+      { protocol: "https", hostname: "*.vercel.app" },
+      { protocol: "https", hostname: "*.netlify.app" },
+      { protocol: "https", hostname: "*.github.io" },
+      { protocol: "https", hostname: "thevalidly.com" },
+      { protocol: "https", hostname: "ayopilih.site" },
+    ],
+    domains: [
+      "opengraph.githubassets.com",
+      "thevalidly.com",
+      "ayopilih.site",
+    ],
+  },
 };
 
 const withMDX = createMDX({

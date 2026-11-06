@@ -11,14 +11,13 @@
     "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
     "greeting": "Hi, I'm",
     "typingPrefix": "Orchestrating ",
-    "typingRoles": ["Digital Stages", "Frontend Virtuoso", "Software Engineer", "Component Architect"],
+    "typingRoles": ["Digital Stages", "Frontend Experiences", "Component Architecture", "Web Choreography"],
     "description": "Frontend Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography.",
     "ctaExplore": "Explore Productions",
+    "ctaContact": "Get in Touch",
     "ctaResume": "Download Resume / CV"
   },
-  "tech": {
-    "label": "THE TECHNICAL ENSEMBLE"
-  },
+  "tech": { "label": "THE TECHNICAL ENSEMBLE" },
   "about": {
     "eyebrow": "PROSCENIUM & VISION",
     "title": "The Story Behind the Stage",
@@ -26,8 +25,8 @@
     "stats": {
       "years": "Years on Stage",
       "productions": "Productions Staged",
-      "ovations": "Standing Ovations",
-      "readiness": "Backstage Readiness"
+      "ovations": "Apprentices Mentored",
+      "readiness": "Laurels Earned"
     },
     "principles": {
       "interaction": {
@@ -39,38 +38,33 @@
         "description": "Behind the velvet curtains lies rigorous engineering: maintainable component architecture, strict type safety, and impeccable performance standards."
       }
     },
-    "archCaption": "OPÉRA GARNIER • STAGECRAFT & MASTERY"
+    "archCaption": "OPÉRA GARNIER • STAGECRAFT & MAESTRY"
   },
   "productions": {
     "eyebrow": "THE PLAYBILL",
     "title": "Featured Productions & Acts",
-    "filters": {
-      "all": "All",
-      "web": "Web",
-      "mobile": "Mobile",
-      "ai": "AI"
-    },
-    "viewProduction": "View Production"
+    "filters": { "all": "All", "web": "Web", "mobile": "Mobile", "ai": "AI" },
+    "viewProduction": "View Production",
+    "showAll": "Show all projects ({count})"
   },
   "repertoire": {
     "eyebrow": "MASTERCLASS & REPERTOIRE",
     "title": "Technical Proficiency",
     "academicLineage": "Academic Lineage",
     "techProficiency": "Technical Proficiency",
-    "levels": {
-      "advanced": "Advanced",
-      "proficient": "Proficient",
-      "familiar": "Familiar"
-    }
+    "levels": { "advanced": "Advanced", "proficient": "Proficient", "familiar": "Familiar" }
   },
   "experience": {
     "eyebrow": "THE JOURNEY",
-    "title": "Experience"
+    "title": "Experience",
+    "tabs": { "work": "Work", "organizations": "Organizations" }
   },
   "laurels": {
     "eyebrow": "THE HALL OF FAME",
     "title": "Laurels",
-    "verify": "Verify"
+    "viewAllTitle": "View all credentials",
+    "viewAllCount": "{count} certificates on LinkedIn",
+    "viewAllAria": "View all certificates on LinkedIn (opens in a new tab)"
   },
   "contact": {
     "eyebrow": "BACKSTAGE INQUIRIES & COMMISSION",
@@ -87,18 +81,16 @@
       "error": "The dispatch could not be delivered. Please email me directly."
     },
     "availability": "Open to opportunities",
-    "location": "Indonesia"
+    "availabilityLabel": "AVAILABILITY",
+    "location": "Purwokerto, Central Java, Indonesia"
   },
-  "footer": {
-    "note": "Composed in Dark Burgundy, Vintage Burgundy, and Refined Cream",
-    "rights": "© {year} Dewi Atika Muthi"
-  },
+  "footer": { "note": "Composed in Dark Burgundy, Vintage Burgundy, and Refined Cream", "rights": "© {year} Dewi Atika Muthi" },
   "blog": {
     "eyebrow": "PROGRAM NOTES",
     "title": "Blog",
     "subtitle": "Technical writings, architectural decisions, and behind-the-scenes notes from the stage.",
     "empty": "No Performances Yet",
-    "emptyDesc": "The program notes are being written. Check back soon for technical articles and architectural deep-dives.",
+    "emptyDesc": "The program notes are being written. Check back soon for technical articles and deep-dives.",
     "readMore": "Read Program Notes"
   },
   "notFound": {
@@ -107,21 +99,11 @@
     "home": "Return to Overture",
     "productions": "Browse Productions"
   },
-  "language": {
-    "label": "Language",
-    "en": "English",
-    "id": "Indonesian"
-  },
-  "theme": {
-    "label": "Theme",
-    "dark": "Dark Burgundy",
-    "light": "Salon Cream"
-  },
-  "stageCard": {
-    "edition": "STAGE VIRTUOSO EDITION",
-    "maestro": "PRINCIPAL MAESTRO",
-    "royalStage": "THE ROYAL STAGE",
-    "subtitle": "Grand Théâtre • Lead Software Composition",
-    "version": "MAESTRO V4.0"
-  }
+  "language": { "label": "Language", "en": "English", "id": "Indonesian" },
+  "theme": { "label": "Theme", "dark": "Dark Burgundy", "light": "Salon Cream" },
+  "livePreview": "Live Preview",
+  "openSite": "Open site",
+  "openInNewTab": "Open in new tab",
+  "desktopView": "Desktop view",
+  "mobileView": "Mobile view"
 }

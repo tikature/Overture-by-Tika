@@ -25,16 +25,16 @@ export default function TechTicker() {
       className="py-7 border-y border-darkCream/20 bg-darkBurgundy/35 backdrop-blur-md"
       data-purpose="tech-stack-strip"
     >
-      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-opera text-cream">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 min-w-0">
+        <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-opera text-cream shrink-0 min-w-0">
           <LucideMusic className="w-4 h-4 text-wineRed" />
           <span>The Technical Ensemble</span>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-softCream">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-softCream overflow-x-auto pb-2 min-w-0" style={{ scrollbarWidth: 'none' }}>
           {techEnsembleChips.map((tech) => (
             <div
               key={tech}
-              className="flex items-center space-x-2.5 px-4 py-2 rounded-full bg-obsidianBurgundy/90 border border-darkCream/25 hover:border-cream transition-colors"
+              className="flex items-center space-x-2.5 px-4 py-2 rounded-full bg-obsidianBurgundy/90 border border-darkCream/25 hover:border-cream transition-colors shrink-0 whitespace-nowrap"
             >
               {iconMap[tech] || null}
               <span className="font-opera font-semibold text-xs tracking-wider text-cream">

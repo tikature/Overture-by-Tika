@@ -1,0 +1,72 @@
+{
+  "validly": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:50.000Z"
+  },
+  "ayopilih": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:48.692Z"
+  },
+  "go-attendance": {
+    "image": false,
+    "embeddable": false,
+    "updatedAt": "2026-11-06T08:59:50.000Z"
+  },
+  "pemira-telu": {
+    "image": false,
+    "embeddable": false,
+    "updatedAt": "2026-11-06T08:59:50.000Z"
+  },
+  "overture": {
+    "image": false,
+    "embeddable": false,
+    "updatedAt": "2026-11-06T08:59:50.000Z"
+  },
+  "atika-aether-portofolio": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:50.044Z"
+  },
+  "go-multitool": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:50.343Z"
+  },
+  "weatherhub2": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:50.088Z"
+  },
+  "go-currency-converter": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T08:59:50.376Z"
+  },
+  "my-recipe": {
+    "image": false,
+    "embeddable": false,
+    "updatedAt": "2026-11-06T09:00:57.545Z"
+  },
+  "go-voting-system": {
+    "image": true,
+    "embeddable": false,
+    "updatedAt": "2026-11-06T09:00:58.120Z"
+  },
+  "ui-voting-system": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T09:00:57.884Z"
+  },
+  "to-do_calendar": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T09:00:58.250Z"
+  },
+  "weatherhub": {
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T09:00:58.286Z"
+  }
+}

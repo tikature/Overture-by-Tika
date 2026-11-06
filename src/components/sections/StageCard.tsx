@@ -3,7 +3,7 @@ import React from "react";
 
 export default function StageCard() {
   return (
-    <div className="relative w-[310px] sm:w-[350px] md:w-[370px] mx-auto lg:mx-0">
+    <div className="relative w-[310px] sm:w-[350px] md:w-[370px] mx-auto lg:mx-0 min-w-0">
       {/* Backing glow */}
       <div className="absolute inset-0 m-auto w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-burgundy via-oxblood/35 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none" />
       
@@ -18,13 +18,13 @@ export default function StageCard() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#3a0b14]/70 via-[#22060b]/90 to-[#190408] pointer-events-none" />
           
           {/* Top Header Bar */}
-          <div className="relative z-20 flex items-center justify-between px-1 pt-1">
-            <span className="whitespace-nowrap text-[10.5px] font-opera uppercase tracking-[0.22em] text-darkCream/95 font-semibold drop-shadow-sm">
+          <div className="relative z-20 flex items-start justify-between gap-3 px-1 pt-1">
+            <span className="min-w-0 text-[10.5px] font-opera uppercase tracking-[0.22em] text-darkCream/95 font-semibold drop-shadow-sm leading-tight">
               STAGE VIRTUOSO EDITION
             </span>
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#3d0913]/90 border border-wineRed/40 shadow-inner whitespace-nowrap">
+            <div className="shrink-0 inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#3d0913]/90 border border-wineRed/40 shadow-inner whitespace-nowrap">
               <span className="w-2.5 h-2.5 rounded-full bg-wineRed shadow-[0_0_8px_#B0303C,0_0_12px_#B0303C]" />
-              <span className="whitespace-nowrap text-[9.5px] font-opera text-cream uppercase tracking-widest font-bold">
+              <span className="text-[10px] font-opera text-cream uppercase tracking-[0.12em] font-bold">
                 PRINCIPAL MAESTRO
               </span>
             </div>

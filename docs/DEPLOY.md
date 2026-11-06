@@ -8,6 +8,10 @@
    - `RESEND_API_KEY` = from resend.com
    - `CONTACT_TO_EMAIL` = detikaa10@gmail.com
    - `CONTACT_FROM_EMAIL` = `onboarding@resend.dev` (until a domain is verified in Resend)
+    - `GITHUB_USERNAME` = tikature (or your GitHub username for auto-discovery)
+    - `GITHUB_TOKEN` = optional, increases GitHub API rate limit
+    - `GITHUB_EXCLUDE` = optional comma-separated repo names to exclude from auto-discovery
+    - After adding or changing a project: run `pnpm previews`, commit `public/images/projects`, push.
 4. Deploy. Every push to `main` → production; every PR/branch → preview URL.
 5. Enable Vercel Analytics + Speed Insights in the project dashboard (the packages are already in the code).
 

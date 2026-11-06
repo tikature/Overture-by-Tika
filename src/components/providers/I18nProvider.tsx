@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Locale, locales, defaultLocale } from "@/lib/i18n";
+import { Locale } from "@/lib/i18n";
 
 interface I18nContextType {
   locale: Locale;
@@ -14,62 +14,36 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
-async function loadTranslations() {
-  const [en, id] = await Promise.all([
-    import("@/messages/en.json"),
-    import("@/messages/id.json"),
-  ]);
-  return { en: en.default, id: id.default } as const;
+interface I18nProviderProps {
+  children: ReactNode;
+  locale: Locale;
+  messages: Record<string, unknown>;
+  initialTheme: "dark" | "light";
 }
 
 function fallbackT(key: string): string {
   return key;
 }
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  // Always use default values for SSR - no localStorage access during render
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [theme, setThemeState] = useState<"dark" | "light">("dark");
-  const [translations, setTranslations] = useState<Record<Locale, Record<string, unknown>> | null>(null);
-  const [hydrated, setHydrated] = useState(false);
+export function I18nProvider({ children, locale: initialLocale, messages, initialTheme }: I18nProviderProps) {
+  const [locale] = useState<Locale>(initialLocale);
+  const [theme, setThemeState] = useState<"dark" | "light">(initialTheme);
 
   useEffect(() => {
-    // Hydrate from localStorage after mount (client-only)
-    const savedLocale = localStorage.getItem("locale") as Locale | null;
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    
-    if (savedLocale && locales.includes(savedLocale)) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLocaleState(savedLocale);
-    }
-    if (savedTheme) {
-      setThemeState(savedTheme);
-    }
-    
-    // Apply theme immediately
-    document.documentElement.classList.toggle("light-theme", savedTheme === "light");
-    
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    loadTranslations().then(setTranslations);
-  }, []);
-
-  useEffect(() => {
-    if (hydrated) {
-      document.documentElement.classList.toggle("light-theme", theme === "light");
-    }
-  }, [theme, hydrated]);
+    document.documentElement.classList.toggle("light-theme", theme === "light");
+  }, [theme]);
 
   const setLocale = (newLocale: Locale) => {
-    setLocaleState(newLocale);
-    localStorage.setItem("locale", newLocale);
+    document.cookie = `locale=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
   };
 
   const setTheme = (newTheme: "dark" | "light") => {
     setThemeState(newTheme);
     localStorage.setItem("theme", newTheme);
+    document.cookie = `theme=${newTheme};path=/;max-age=31536000;SameSite=Lax`;
   };
 
   const toggleTheme = () => {
@@ -77,27 +51,30 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string, params?: Record<string, string>) => {
-    if (!translations) return fallbackT(key);
-    
     const keys = key.split(".");
-    let value: unknown = translations[locale];
-    
+    let value: unknown = messages;
+
     for (const k of keys) {
       value = (value as Record<string, unknown>)?.[k];
     }
-    
-    if (typeof value !== "string") {
+
+    if (value === undefined || value === null) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn(`[i18n] Missing translation key: ${key} for locale ${locale}`);
+      }
       return fallbackT(key);
     }
-    
-    if (params) {
-      return Object.entries(params).reduce((str, [k, v]) => str.replace(`{${k}}`, v), value);
+
+    if (typeof value === "string") {
+      if (params) {
+        return Object.entries(params).reduce((str, [k, v]) => str.replace(`{${k}}`, v), value);
+      }
+      return value;
     }
-    
-    return value;
+
+    return JSON.stringify(value);
   };
 
-  // ALWAYS provide context - never render children without it
   const contextValue: I18nContextType = {
     locale,
     setLocale,

@@ -4,14 +4,39 @@ import Footer from "@/components/layout/Footer";
 import TechTicker from "@/components/sections/TechTicker";
 import ProductionsGrid from "@/components/sections/ProductionsGrid";
 import RepertoireSection from "@/components/sections/RepertoireSection";
-import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
 import LaurelsGrid from "@/components/sections/LaurelsGrid";
 import ContactSection from "@/components/sections/ContactSection";
 import BlogSection from "@/components/sections/BlogSection";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
+import { getProjects } from "@/lib/projects-source";
+import fs from "fs";
+import path from "path";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const mergedProjects = await getProjects();
+  const productionsCount = mergedProjects.filter((p) => p.featured).length;
+
+  // Load manifest for thumbnails and embeddable flags
+  let manifest: Record<string, { image: boolean; embeddable: boolean; updatedAt: string }> = {};
+  const manifestPath = path.join(process.cwd(), "public/images/projects/manifest.json");
+  if (fs.existsSync(manifestPath)) {
+    try {
+      manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+    } catch {
+      manifest = {};
+    }
+  }
+
+  const projectsWithMeta = mergedProjects.map((p) => {
+    const info = manifest[p.slug];
+    return {
+      ...p,
+      thumbnail: p.thumbnail,
+      embeddable: info?.embeddable ?? p.embeddable ?? false,
+    };
+  });
+
   return (
     <>
       <AmbientStage />
@@ -24,20 +49,17 @@ export default function HomePage() {
         <TechTicker />
 
         {/* About / The Stage */}
-        <AboutSection />
+        <AboutSection productionsCount={productionsCount} />
 
         {/* Productions */}
         <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-darkCream/20 bg-darkBurgundy/20 relative">
           <div className="max-w-7xl mx-auto">
-            <ProductionsGrid />
+            <ProductionsGrid projects={projectsWithMeta} />
           </div>
         </section>
 
         {/* Repertoire */}
         <RepertoireSection />
-
-        {/* Experience */}
-        <ExperienceTimeline />
 
         {/* Laurels */}
         <LaurelsGrid />

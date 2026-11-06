@@ -11,14 +11,13 @@
     "eyebrow": "FRONTEND DEVELOPER • SOFTWARE ENGINEER",
     "greeting": "Halo, saya",
     "typingPrefix": "Mengorkestrasi ",
-    "typingRoles": ["Panggung Digital", "Frontend Virtuoso", "Software Engineer", "Arsitek Komponen"],
+    "typingRoles": ["Panggung Digital", "Pengalaman Frontend", "Arsitektur Komponen", "Koreografi Web"],
     "description": "Frontend Developer & Software Engineer yang membuat aplikasi web modern, tangguh, dan berkinerja tinggi. Memadukan keagungan teater dan estetika detail opera dengan rekayasa ketat, arsitektur komponen terukur, dan koreografi web yang mulus.",
     "ctaExplore": "Jelajahi Produksi",
+    "ctaContact": "Hubungi Saya",
     "ctaResume": "Unduh Resume / CV"
   },
-  "tech": {
-    "label": "THE TECHNICAL ENSEMBLE"
-  },
+  "tech": { "label": "THE TECHNICAL ENSEMBLE" },
   "about": {
     "eyebrow": "PROSCENIUM & VISION",
     "title": "Kisah Di Balik Panggung",
@@ -44,33 +43,28 @@
   "productions": {
     "eyebrow": "THE PLAYBILL",
     "title": "Produksi Unggulan & Akte",
-    "filters": {
-      "all": "Semua",
-      "web": "Web",
-      "mobile": "Mobile",
-      "ai": "AI"
-    },
-    "viewProduction": "Lihat Produksi"
+    "filters": { "all": "Semua", "web": "Web", "mobile": "Mobile", "ai": "AI" },
+    "viewProduction": "Lihat Produksi",
+    "showAll": "Tampilkan semua proyek ({count})"
   },
   "repertoire": {
     "eyebrow": "MASTERCLASS & REPERTOIRE",
     "title": "Kemahiran Teknis",
     "academicLineage": "Garis Keturunan Akademik",
     "techProficiency": "Kemahiran Teknis",
-    "levels": {
-      "advanced": "Mahir",
-      "proficient": "Terampil",
-      "familiar": "Paham"
-    }
+    "levels": { "advanced": "Mahir", "proficient": "Terampil", "familiar": "Paham" }
   },
   "experience": {
     "eyebrow": "THE JOURNEY",
-    "title": "Pengalaman"
+    "title": "Pengalaman",
+    "tabs": { "work": "Work", "organizations": "Organizations" }
   },
   "laurels": {
     "eyebrow": "THE HALL OF FAME",
     "title": "Penghargaan",
-    "verify": "Verifikasi"
+    "viewAllTitle": "Lihat semua penghargaan",
+    "viewAllCount": "{count} sertifikat di LinkedIn",
+    "viewAllAria": "Lihat semua sertifikat di LinkedIn (buka di tab baru)"
   },
   "contact": {
     "eyebrow": "BACKSTAGE INQUIRIES & COMMISSION",
@@ -87,18 +81,16 @@
       "error": "Surat tidak dapat dikirim. Silakan email saya langsung."
     },
     "availability": "Terbuka untuk peluang",
-    "location": "Indonesia"
+    "availabilityLabel": "KETERSEDIAAN",
+    "location": "Purwokerto, Central Java, Indonesia"
   },
-  "footer": {
-    "note": "Dikarang dalam Dark Burgundy, Vintage Burgundy, dan Refined Cream",
-    "rights": "© {year} Dewi Atika Muthi"
-  },
+  "footer": { "note": "Dikarang dalam Dark Burgundy, Vintage Burgundy, dan Refined Cream", "rights": "© {year} Dewi Atika Muthi" },
   "blog": {
     "eyebrow": "CATATAN PROGRAM",
     "title": "Blog",
     "subtitle": "Tulisan teknis, keputusan arsitektur, dan catatan di balik layar dari panggung.",
     "empty": "Belum Ada Pertunjukan",
-    "emptyDesc": "Catatan program sedang ditulis. Kembali nanti untuk artikel teknis dan analisis arsitektur mendalam.",
+    "emptyDesc": "Catatan program sedang ditulis. Kembali nanti untuk artikel teknis dan analisis mendalam.",
     "readMore": "Baca Catatan Program"
   },
   "notFound": {
@@ -107,21 +99,11 @@
     "home": "Kembali ke Overture",
     "productions": "Jelajahi Produksi"
   },
-  "language": {
-    "label": "Bahasa",
-    "en": "English",
-    "id": "Indonesia"
-  },
-  "theme": {
-    "label": "Tema",
-    "dark": "Dark Burgundy",
-    "light": "Salon Cream"
-  },
-  "stageCard": {
-    "edition": "STAGE VIRTUOSO EDITION",
-    "maestro": "PRINCIPAL MAESTRO",
-    "royalStage": "THE ROYAL STAGE",
-    "subtitle": "Grand Théâtre • Lead Software Composition",
-    "version": "MAESTRO V4.0"
-  }
+  "language": { "label": "Bahasa", "en": "English", "id": "Indonesia" },
+  "theme": { "label": "Tema", "dark": "Dark Burgundy", "light": "Salon Cream" },
+  "livePreview": "Pratinjau Langsung",
+  "openSite": "Buka situs",
+  "openInNewTab": "Buka di tab baru",
+  "desktopView": "Tampilan Desktop",
+  "mobileView": "Tampilan Mobile"
 }

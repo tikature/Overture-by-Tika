@@ -43,4 +43,15 @@
 - [x] "Program Notes" blog (MDX) · Indonesian/English toggle (`next-intl`) · light "Salon Cream" theme toggle
 
 ## Phase 8 — Ship
-- [ ] Follow `docs/DEPLOY.md`; fill every TODO(user) leftover list; final acceptance checklist from PRD §6
+- [x] Follow `docs/DEPLOY.md`; fill every TODO(user) leftover list; final acceptance checklist from PRD §6
+- [x] Sync all data files and messages with CONTENT.md (site, about, skills, projects, education, experience, certificates)
+- [x] Add Indonesian translations for all copy
+- [x] Remove all Stitch placeholders and TODO values
+- [x] Add Experience Work/Organizations toggle
+- [x] Laurels: show credential ID, hide Verify button
+- [x] Projects: repoUrl only for confirmed public repos
+- [x] Privacy: verified no phone/address/DOB/ID numbers in codebase
+- [x] Resume: button points to /resume/Dewi-Atika-Muthi-CV.pdf (file must be supplied)
+- [x] GitHub auto-discovery for Productions: fetch repos, merge with curated, embeddability check, preview API, live preview modal
+- [x] Translation keys for new UI strings (EN/ID)
+- [x] pnpm typecheck && pnpm lint && pnpm build pass

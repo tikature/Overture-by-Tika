@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint src --config eslint.config.mjs",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "previews": "tsx scripts/generate-previews.ts"
   },
   "dependencies": {
     "@next/mdx": "^16.4.4",
@@ -36,7 +37,9 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "playwright": "^1.44.0"
   },
   "packageManager": "pnpm@12.16.1"
 }

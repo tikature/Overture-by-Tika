@@ -38,6 +38,10 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-deep-abyss text-soft-cream font-body;
   }

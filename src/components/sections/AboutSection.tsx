@@ -1,45 +1,63 @@
+"use client";
+
+import React from "react";
+import { useI18n } from "@/components/providers/I18nProvider";
+import { aboutData } from "@/data/about";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  productionsCount: number;
+}
+
+export default function AboutSection({ productionsCount }: AboutSectionProps) {
+  const { t } = useI18n();
+  const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+  const stats = aboutData.stats.map((s, i) => {
+    let value = s.value;
+    let suffix = s.suffix;
+    if (i === 1) { // Productions Staged
+      value = productionsCount;
+      suffix = "";
+    }
+    return {
+      ...s,
+      value,
+      suffix,
+      label: t(`about.stats.${["years", "productions", "ovations", "readiness"][i]}`) || s.label,
+    };
+  });
+
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative proscenium-arch">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          eyebrow="PROSCENIUM & VISION"
+          eyebrow={aboutData.eyebrow}
           title={
-            <>The Story Behind <span className="italic text-darkCream font-serif">the Stage</span></>
+            <>
+              {aboutData.title.before}
+              <span className="italic text-darkCream font-serif">{aboutData.title.accent}</span>
+            </>
           }
         >
-          Years of conducting complex frontend architectures as a dramatic theatrical overture. Every layout is a stage, every interaction a cue, and every release an ovation.
+          {aboutData.lead}
         </SectionHeading>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Stats left */}
-          <div className="lg:col-span-3 grid grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">3+</span>
-              <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold">Years on Stage</p>
-            </div>
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">50+</span>
-              <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold">Productions Staged</p>
-            </div>
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">20+</span>
-              <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold">Standing Ovations</p>
-            </div>
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">24/7</span>
-              <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold">Backstage Readiness</p>
-            </div>
+          <div className="lg:col-span-3 grid grid-cols-2 lg:grid-cols-1 gap-4 min-w-0">
+            {stats.map((stat, idx) => (
+              <StatCard key={idx} stat={stat} prefersReducedMotion={prefersReducedMotion} />
+            ))}
           </div>
-          
+
           {/* Arch SVG */}
-          <div className="lg:col-span-6 flex flex-col items-center justify-center relative my-8 lg:my-0">
+          <div className="lg:col-span-6 flex flex-col items-center justify-center relative my-8 lg:my-0 min-w-0">
             <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-burgundy/20 blur-[100px] pointer-events-none" />
-            <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-md aspect-square flex items-center justify-center min-w-0">
               <svg
-                className="w-full h-auto filter drop-shadow-[0_0_35px_rgba(128,0,32,0.4)]"
+                className="w-full h-auto max-w-full filter drop-shadow-[0_0_35px_rgba(128,0,32,0.4)]"
                 fill="none"
                 viewBox="0 0 500 420"
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,42 +129,109 @@ export default function AboutSection() {
               </svg>
             </div>
             <p className="text-xs uppercase tracking-[0.25em] text-darkCream font-opera font-bold mt-2">
-              OPÉRA GARNIER • STAGECRAFT & MASTERY
+              {aboutData.archCaption}
             </p>
           </div>
-          
+
           {/* Principles right */}
-          <div className="lg:col-span-3 flex flex-col space-y-5">
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-6 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all shadow-lg">
-              <h3 className="text-cream font-bold text-base mb-2 font-opera flex items-center">
-                <svg aria-hidden="true" className="w-4 h-4 mr-2 text-wineRed" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594-1.594l-1.051-5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594z"></path>
-                  <path d="M20 2v4"></path>
-                  <path d="M22 4h-4"></path>
-                  <circle cx="4" cy="20" r="2"></circle>
-                </svg>
-                Directing the Interaction
-              </h3>
-              <p className="text-softCream/80 text-xs sm:text-sm leading-relaxed font-body">
-                Treating user journeys as scripted scenes where visual hierarchy, fluid micro-interactions, and flawless speed deliver undeniable drama.
-              </p>
-            </div>
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-6 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all shadow-lg">
-              <h3 className="text-cream font-bold text-base mb-2 font-opera flex items-center">
-                <svg aria-hidden="true" className="w-4 h-4 mr-2 text-wineRed" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </svg>
-                Stagecraft & Precision
-              </h3>
-              <p className="text-softCream/80 text-xs sm:text-sm leading-relaxed font-body">
-                Behind the velvet curtains lies rigorous engineering: maintainable component architecture, strict type safety, and impeccable performance standards.
-              </p>
-            </div>
+          <div className="lg:col-span-3 flex flex-col space-y-5 min-w-0">
+            {aboutData.principles.map((principle, idx) => (
+              <div
+                key={idx}
+                className="bg-obsidianBurgundy/80 border border-darkCream/20 p-6 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all shadow-lg min-w-0"
+              >
+                <h3 className="text-cream font-bold text-base mb-2 font-opera flex items-center">
+                  <svg aria-hidden="true" className="w-4 h-4 mr-2 text-wineRed" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    {idx === 0 ? (
+                      <>
+                        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594-1.594l-1.051-5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594z"></path>
+                        <path d="M20 2v4"></path>
+                        <path d="M22 4h-4"></path>
+                        <circle cx="4" cy="20" r="2"></circle>
+                      </>
+                    ) : (
+                      <>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                      </>
+                    )}
+                  </svg>
+                  {principle.title}
+                </h3>
+                <p className="text-softCream/80 text-xs sm:text-sm leading-relaxed font-body min-w-0">
+                  {principle.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StatCard({
+  stat,
+  prefersReducedMotion,
+}: {
+  stat: { value: number; suffix: string; label: string };
+  prefersReducedMotion: boolean;
+}) {
+  const [count, setCount] = React.useState(() => (prefersReducedMotion ? stat.value : 0));
+  const [hasStarted, setHasStarted] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  React.useEffect(() => {
+    if (!hasStarted || prefersReducedMotion) return;
+
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / 1500, 1);
+
+      setCount(Math.floor(progress * stat.value));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [hasStarted, stat.value, prefersReducedMotion]);
+
+  return (
+    <div
+      ref={ref}
+      className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg min-w-0"
+    >
+      <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">
+        {count}{stat.suffix}
+      </span>
+      <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold min-w-0">
+        {stat.label}
+      </p>
+    </div>
   );
 }
