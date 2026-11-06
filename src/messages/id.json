@@ -85,13 +85,22 @@
     "location": "Purwokerto, Central Java, Indonesia"
   },
   "footer": { "note": "Dikarang dalam Dark Burgundy, Vintage Burgundy, dan Refined Cream", "rights": "© {year} Dewi Atika Muthi" },
-  "blog": {
-    "eyebrow": "CATATAN PROGRAM",
-    "title": "Blog",
-    "subtitle": "Tulisan teknis, keputusan arsitektur, dan catatan di balik layar dari panggung.",
-    "empty": "Belum Ada Pertunjukan",
-    "emptyDesc": "Catatan program sedang ditulis. Kembali nanti untuk artikel teknis dan analisis mendalam.",
-    "readMore": "Baca Catatan Program"
+  "spotlight": {
+    "eyebrow": "SOROTAN",
+    "title": "Solois Utama",
+    "subtitle": "Produksi yang menentukan musim — karya terobosan, kepercayaan klien, dan ketrampilan rekayasa.",
+    "caseStudy": "Baca studi kasus",
+    "liveSite": "Kunjungi situs langsung",
+    "mentored": {
+      "label": "DIBIMBING",
+      "title": "140+ Mahasiswa Dibimbing",
+      "desc": "50+ di lab Sistem Operasi, 90+ di lab Desain dan Pemrograman Web di Universitas Telkom."
+    },
+    "events": {
+      "label": "DIPRAKARSAI",
+      "title": "2 Acara Besar Diketuai",
+      "desc": "LDK & Makrab SE 3.0 (90+ peserta, 40+ panitia) dan Buka Puasa Bersama Rekayasa Perangkat Lunak 2024 (100+ peserta, 50+ panitia)."
+    }
   },
   "notFound": {
     "title": "Tirai Telah Turun",

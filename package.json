@@ -12,7 +12,6 @@
     "previews": "tsx scripts/generate-previews.ts"
   },
   "dependencies": {
-    "@next/mdx": "^16.4.4",
     "@vercel/analytics": "^1.5.1",
     "@vercel/speed-insights": "^1.1.0",
     "clsx": "^2.1.1",
@@ -20,7 +19,6 @@
     "motion": "^11.14.4",
     "next": "16.4.4",
     "next-intl": "^4.14.9",
-    "next-mdx-remote": "^6.0.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "resend": "^4.0.1",

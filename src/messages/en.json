@@ -85,13 +85,22 @@
     "location": "Purwokerto, Central Java, Indonesia"
   },
   "footer": { "note": "Composed in Dark Burgundy, Vintage Burgundy, and Refined Cream", "rights": "© {year} Dewi Atika Muthi" },
-  "blog": {
-    "eyebrow": "PROGRAM NOTES",
-    "title": "Blog",
-    "subtitle": "Technical writings, architectural decisions, and behind-the-scenes notes from the stage.",
-    "empty": "No Performances Yet",
-    "emptyDesc": "The program notes are being written. Check back soon for technical articles and deep-dives.",
-    "readMore": "Read Program Notes"
+  "spotlight": {
+    "eyebrow": "SPOTLIGHT",
+    "title": "Principal Soloist",
+    "subtitle": "The productions that defined the season — breakthrough work, client trust, and engineering craft.",
+    "caseStudy": "Read the case study",
+    "liveSite": "Visit live site",
+    "mentored": {
+      "label": "MENTORED",
+      "title": "140+ Students Mentored",
+      "desc": "50+ in Operating Systems lab, 90+ in Web Design and Programming lab at Telkom University."
+    },
+    "events": {
+      "label": "CHAIRED",
+      "title": "2 Large-Scale Events Chaired",
+      "desc": "LDK & Makrab SE 3.0 (90+ participants, 40+ committee) and Software Engineering Iftar 2024 (100+ participants, 50+ committee)."
+    }
   },
   "notFound": {
     "title": "The Curtain Has Fallen",

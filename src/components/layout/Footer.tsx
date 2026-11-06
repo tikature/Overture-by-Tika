@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="mt-6 text-center text-xs text-warmCream/70">
-        {siteConfig.footerNote} © {currentYear} {siteConfig.fullName}
+        © {currentYear} {siteConfig.fullName}
       </p>
     </footer>
   );

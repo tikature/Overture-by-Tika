@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/data/site";
 import TypingEffect from "./TypingEffect";
 import StageCard from "./StageCard";
@@ -8,7 +8,74 @@ import Button from "@/components/ui/Button";
 import { useI18n } from "@/components/providers/I18nProvider";
 import { LucideCompass, LucideScroll, LucideGithub, LucideLinkedin, LucideMail, LucideInstagram, LucideVideo } from "lucide-react";
 
-export default function HeroSection() {
+interface HeroStatChipProps {
+  label: string;
+  value: number | string;
+  liveDot?: boolean;
+}
+
+function HeroStatChip({ label, value, liveDot = false }: HeroStatChipProps) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const isNumber = typeof value === "number";
+
+  useEffect(() => {
+    if (!isNumber) {
+      return;
+    }
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      requestAnimationFrame(() => setDisplayValue(value));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = value;
+            const duration = 1200;
+            const start = performance.now();
+            function animate(now: number) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              setDisplayValue(Math.floor(eased * target));
+              if (progress < 1) requestAnimationFrame(animate);
+              else setDisplayValue(target);
+            }
+            requestAnimationFrame(animate);
+            observer.unobserve(ref.current!);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [isNumber, value]);
+
+  return (
+    <div
+      ref={ref}
+      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkBurgundy/60 border border-darkCream/30 backdrop-blur-md shadow-[0_0_15px_rgba(128,0,32,0.4)]"
+    >
+      {liveDot && (
+        <span className="w-2 h-2 rounded-full bg-wineRed shadow-[0_0_8px_#B0303C] animate-pulse" aria-hidden="true" />
+      )}
+      <span className="text-[11px] uppercase tracking-[0.25em] text-ivoryCream font-opera font-bold">{label}</span>
+      <span className="font-display font-extrabold text-cream">
+        {isNumber ? displayValue.toLocaleString() : value}
+      </span>
+    </div>
+  );
+}
+
+interface HeroSectionProps {
+  publicRepos?: number;
+  certificatesCount?: number;
+  availability?: string;
+}
+
+export default function HeroSection({ publicRepos, certificatesCount, availability }: HeroSectionProps) {
   const { t } = useI18n();
   const socialLinks = [
     { href: siteConfig.github, icon: LucideGithub, label: "GitHub", show: true },
@@ -73,6 +140,19 @@ export default function HeroSection() {
                 )
               )}
             </div>
+          </div>
+
+          {/* Hero Stat Chips */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+            {typeof publicRepos === "number" && (
+              <HeroStatChip label="Public Repos" value={publicRepos} />
+            )}
+            {typeof certificatesCount === "number" && (
+              <HeroStatChip label="Certificates" value={certificatesCount} />
+            )}
+            {availability && (
+              <HeroStatChip label={availability} value="" liveDot />
+            )}
           </div>
         </div>
         
