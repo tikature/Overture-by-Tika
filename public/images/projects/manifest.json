@@ -2,71 +2,71 @@
   "validly": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:50.000Z"
+    "updatedAt": "2026-11-06T15:12:48.677Z"
   },
   "ayopilih": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:48.692Z"
+    "updatedAt": "2026-11-06T15:12:49.333Z"
   },
   "go-attendance": {
     "image": false,
     "embeddable": false,
-    "updatedAt": "2026-11-06T08:59:50.000Z"
+    "updatedAt": "2026-11-06T15:12:49.334Z"
   },
   "pemira-telu": {
     "image": false,
     "embeddable": false,
-    "updatedAt": "2026-11-06T08:59:50.000Z"
+    "updatedAt": "2026-11-06T15:12:49.334Z"
   },
   "overture": {
     "image": false,
     "embeddable": false,
-    "updatedAt": "2026-11-06T08:59:50.000Z"
+    "updatedAt": "2026-11-06T15:12:49.334Z"
   },
   "atika-aether-portofolio": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:50.044Z"
+    "updatedAt": "2026-11-06T15:12:57.951Z"
   },
   "go-multitool": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:50.343Z"
+    "updatedAt": "2026-11-06T15:12:58.318Z"
   },
   "weatherhub2": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:50.088Z"
+    "updatedAt": "2026-11-06T15:12:57.967Z"
   },
   "go-currency-converter": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T08:59:50.376Z"
+    "updatedAt": "2026-11-06T15:12:58.059Z"
   },
   "my-recipe": {
-    "image": false,
-    "embeddable": false,
-    "updatedAt": "2026-11-06T09:00:57.545Z"
+    "image": true,
+    "embeddable": true,
+    "updatedAt": "2026-11-06T15:12:57.854Z"
   },
   "go-voting-system": {
     "image": true,
     "embeddable": false,
-    "updatedAt": "2026-11-06T09:00:58.120Z"
+    "updatedAt": "2026-11-06T15:12:58.452Z"
   },
   "ui-voting-system": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T09:00:57.884Z"
+    "updatedAt": "2026-11-06T15:12:58.457Z"
   },
   "to-do_calendar": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T09:00:58.250Z"
+    "updatedAt": "2026-11-06T15:12:58.547Z"
   },
   "weatherhub": {
     "image": true,
     "embeddable": true,
-    "updatedAt": "2026-11-06T09:00:58.286Z"
+    "updatedAt": "2026-11-06T15:12:58.579Z"
   }
 }
