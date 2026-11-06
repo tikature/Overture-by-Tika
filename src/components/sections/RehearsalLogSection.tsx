@@ -49,54 +49,57 @@ export default async function RehearsalLogSection() {
         </div>
 
         <article className="bg-obsidianBurgundy border border-darkCream/20 rounded-3xl p-6 lg:p-8 opera-border-hover">
-          <div className="grid grid-cols-12 gap-8">
+          <div className="flex flex-col lg:flex-row gap-8">
             {/* Heatmap + stats */}
-            <div className="lg:col-span-8">
+            <div className="flex-1 min-w-0">
               <h3 className="text-lg font-opera font-bold uppercase tracking-wider text-ivoryCream mb-4">
                 Contribution Calendar (Last Year)
               </h3>
               <div className="overflow-x-auto" role="img" aria-label={`GitHub contributions heatmap. Total contributions: ${contributions.total}. Longest streak: ${contributions.longestStreak} days. Current streak: ${contributions.currentStreak} days.`}>
-                <div className="grid gap-1 min-w-max" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
-                  {rawWeeks.length > 0 ? (
-                    rawWeeks.map((week, weekIdx) => (
-                      <div key={weekIdx} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
-                        {week.contributionDays.map((day, dayIdx) => (
-                          <div
-                            key={dayIdx}
-                            className={`rounded ${getIntensityClass(day.contributionCount)} w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px]`}
-                            title={`${day.contributionCount} contributions on ${day.date}`}
-                            style={{ width: "8px", height: "8px" }}
-                          />
-                        ))}
-                      </div>
-                    ))
-                  ) : (
-                    // fallback: empty grid with 53 columns
-                    Array.from({ length: 53 }).map((_, i) => (
-                      <div key={i} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
-                        <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px] rounded bg-oxblood/30" style={{ width: "8px", height: "8px" }} />
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
+                <div className="min-w-max">
+                  {/* Heatmap grid */}
+                  <div className="grid gap-1" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
+                    {rawWeeks.length > 0 ? (
+                      rawWeeks.map((week, weekIdx) => (
+                        <div key={weekIdx} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
+                          {week.contributionDays.map((day, dayIdx) => (
+                            <div
+                              key={dayIdx}
+                              className={`rounded ${getIntensityClass(day.contributionCount)} w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px]`}
+                              title={`${day.contributionCount} contributions on ${day.date}`}
+                              style={{ width: "8px", height: "8px" }}
+                            />
+                          ))}
+                        </div>
+                      ))
+                    ) : (
+                      // fallback: empty grid with 53 columns
+                      Array.from({ length: 53 }).map((_, i) => (
+                        <div key={i} className="flex flex-col gap-1" style={{ minWidth: "8px" }}>
+                          <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] lg:w-[12px] lg:h-[12px] rounded bg-oxblood/30" style={{ width: "8px", height: "8px" }} />
+                        </div>
+                      ))
+                    )}
+                  </div>
 
-              {/* Month labels */}
-              <div className="flex gap-px mt-2 overflow-x-auto min-w-max" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
-                {Array.from({ length: 53 }).map((_, i) => {
-                  const date = new Date();
-                  date.setDate(date.getDate() - (52 - i) * 7);
-                  const isMonthStart = date.getDate() <= 7;
-                  return (
-                    <div
-                      key={i}
-                      className="w-[8px] sm:w-[10px] lg:w-[12px] text-[8px] sm:text-[9px] lg:text-[10px] text-warmCream/50 font-opera uppercase tracking-wider text-center"
-                      style={{ width: "8px" }}
-                    >
-                      {isMonthStart ? date.toLocaleDateString("en-US", { month: "short" }) : ""}
-                    </div>
-                  );
-                })}
+                  {/* Month labels - aligned with heatmap columns */}
+                  <div className="flex gap-1 mt-2" style={{ gridTemplateColumns: "repeat(53, 8px)" }}>
+                    {Array.from({ length: 53 }).map((_, i) => {
+                      const date = new Date();
+                      date.setDate(date.getDate() - (52 - i) * 7);
+                      const isMonthStart = date.getDate() <= 7;
+                      return (
+                        <div
+                          key={i}
+                          className="w-[8px] sm:w-[10px] lg:w-[12px] text-[8px] sm:text-[9px] lg:text-[10px] text-warmCream/50 font-opera uppercase tracking-wider text-center whitespace-nowrap overflow-hidden"
+                          style={{ width: "8px" }}
+                        >
+                          {isMonthStart ? date.toLocaleDateString("en-US", { month: "short" }) : ""}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
 
               {/* Legend */}
@@ -128,7 +131,7 @@ export default async function RehearsalLogSection() {
             </div>
 
             {/* Right side: Top languages + Latest cues */}
-            <div className="lg:col-span-4 space-y-8">
+            <div className="lg:w-96 space-y-8 shrink-0">
               <div>
                 <h3 className="text-lg font-opera font-bold uppercase tracking-wider text-ivoryCream mb-4">
                   Tonight&apos;s Programme
