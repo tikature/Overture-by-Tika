@@ -9,10 +9,10 @@ PRIVACY (hard rule): never write the phone number, home address, date of birth o
 - brand: "Overture by Atika"
 - fullName: "Dewi Atika Muthi"
 - displayName: "Tika"
-- title: "Frontend Developer • Software Engineer"
+- title: "Fullstack Developer • Software Engineer"
 - roles (typing): "Digital Stages", "Frontend Experiences", "Component Architecture", "Web Choreography"
 - tagline: "Orchestrating Software Engineer"
-- description: "Frontend Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography."
+- description: "Fullstack Developer & Software Engineer crafting modern, robust, and high-performance web applications. Blending the theatrical majesty and meticulous aesthetic of the grand opera house with rigorous engineering, scalable component architecture, and fluid web choreography."
 - email: detikaa10@gmail.com
 - github: https://github.com/tikature
 - linkedin: https://www.linkedin.com/in/dewi-atika-muthi/
@@ -169,7 +169,7 @@ testimonials: [] — hide the section and its nav link while empty.
 
 ## SEO
 
-- title default: "Overture by Atika — Frontend Developer & Software Engineer"
+- title default: "Overture by Atika — Fullstack Developer & Software Engineer"
 - description: "Portfolio of Dewi Atika Muthi — frontend and full-stack engineer building web and mobile apps with Next.js, React, TypeScript, Laravel and Flutter."
 - keywords: frontend developer, software engineer, Next.js, React, TypeScript, Flutter, Laravel, portfolio, Indonesia
 - JSON-LD Person: name, jobTitle, url, email, sameAs [github, linkedin, instagram, tiktok], alumniOf Telkom University, address locality "Purwokerto" (no phone, no street address)

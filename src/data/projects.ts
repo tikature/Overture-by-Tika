@@ -102,7 +102,7 @@ export const projects: Project[] = [
       "This portfolio: an opera-orchestra themed stage for code.",
     category: "web",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
-    role: "Frontend Developer",
+    role: "Fullstack Developer",
     problem:
       "Create a theatrical, memorable portfolio that showcases engineering skills through an opera house metaphor.",
     solution:
