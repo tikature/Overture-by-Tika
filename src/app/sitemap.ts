@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/projects-source";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.siteUrl;
   const currentDate = new Date();
 
@@ -20,7 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.8,
   }));
 
-  const projectRoutes = projects.map((project) => ({
+  const mergedProjects = await getProjects();
+  const projectRoutes = mergedProjects.map((project) => ({
     url: `${baseUrl}/productions/${project.slug}`,
     lastModified: currentDate,
     changeFrequency: "monthly" as const,

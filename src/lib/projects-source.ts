@@ -36,6 +36,8 @@ export interface MergedProject {
   embeddable?: boolean;
   isAuto: boolean;
   thumbnail?: string;
+  order?: number;
+  pushedAt?: string;
 }
 
 /**
@@ -49,7 +51,6 @@ function normalizeHomepage(url: string | null): string | null {
   }
   try {
     const parsed = new URL(normalized);
-    // drop trailing slash
     normalized = `${parsed.protocol}//${parsed.host}${parsed.pathname}`.replace(/\/$/, "");
     return normalized;
   } catch {
@@ -154,133 +155,149 @@ async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
 
 /**
  * Merge curated projects with GitHub repos.
- * Returns merged list (curated first, then auto cards sorted by pushed_at desc).
+ * New rule: a project card exists ONLY if a public GitHub repo backs it.
+ * Curated data becomes optional ENRICHMENT keyed by exact repo name (case-insensitive).
+ * Curated entry with no matching repo is ignored (dev warning printed).
  */
 export async function getProjects(): Promise<MergedProject[]> {
   const repos = await fetchGitHubRepos();
   const exclude = new Set(getExcludeList());
   const username = process.env.GITHUB_USERNAME || "tikature";
 
-  // Filter repos
-  const filteredRepos = repos.filter((repo) => {
+  // Eligible repos: public, not fork, not archived, not private, not profile repo, not excluded,
+  // AND (has homepage OR has topic "portfolio")
+  const eligibleRepos = repos.filter((repo) => {
     if (repo.fork || repo.archived || repo.private) return false;
-    if (repo.name === username) return false; // profile README repo
+    if (repo.name === username) return false;
     if (exclude.has(repo.name)) return false;
-    return !!repo.homepage;
+    const hasHomepage = !!repo.homepage && repo.homepage.trim() !== "";
+    const hasPortfolioTopic = repo.topics.some((t) => t.toLowerCase() === "portfolio");
+    return hasHomepage || hasPortfolioTopic;
   });
 
-  // Normalize homepage
-  const reposWithHomepage = filteredRepos.map((repo) => ({
+  // Normalize homepage for those that have it
+  const reposWithHomepage = eligibleRepos.map((repo) => ({
     ...repo,
     homepage: normalizeHomepage(repo.homepage),
-  })).filter((repo) => !!repo.homepage) as (GitHubRepo & { homepage: string })[];
+  }));
 
-  // Build lookup maps for curated projects
-  const curatedByHomepage = new Map<string, typeof curatedProjects[0]>();
-  const curatedBySlug = new Map<string, typeof curatedProjects[0]>();
+  // Build curated enrichment map keyed by repo name (lowercase)
+  const curatedByRepoName = new Map<string, typeof curatedProjects[0]>();
   curatedProjects.forEach((p) => {
-    if (p.liveUrl) {
-      const norm = normalizeHomepage(p.liveUrl);
-      if (norm) curatedByHomepage.set(norm, p);
-    }
-    curatedBySlug.set(p.slug, p);
+    curatedByRepoName.set(p.slug.toLowerCase(), p);
   });
 
-  // Merge
-  const merged: MergedProject[] = [];
-  const usedCurated = new Set<string>();
+  const enriched: MergedProject[] = [];
+  const auto: MergedProject[] = [];
+  const matchedCuratedSlugs = new Set<string>();
 
-  // First pass: match repos to curated projects
+  // Process eligible repos
   for (const repo of reposWithHomepage) {
-    const matchedCurated = curatedByHomepage.get(repo.homepage!) || curatedBySlug.get(repo.name);
-    if (matchedCurated) {
-      usedCurated.add(matchedCurated.slug);
-      merged.push({
-        ...matchedCurated,
-        // GitHub fills missing fields
-        liveUrl: matchedCurated.liveUrl || repo.homepage,
-        repoUrl: matchedCurated.repoUrl || repo.html_url,
-        description: matchedCurated.description || repo.description || "",
-        stack: matchedCurated.stack.length ? matchedCurated.stack : (repo.topics.length ? repo.topics : (repo.language ? [repo.language] : [])),
-        isAuto: false,
-        embeddable: false, // will be computed later
-      });
-    }
-  }
+    const curated = curatedByRepoName.get(repo.name.toLowerCase());
+    const repoHomepage = repo.homepage;
+    const repoDescription = repo.description?.trim() || "";
+    const repoPushedAt = repo.pushed_at;
 
-  // Add remaining curated projects (those not matched)
-  for (const curated of curatedProjects) {
-    if (!usedCurated.has(curated.slug)) {
-      merged.push({
-        ...curated,
+    if (curated) {
+      matchedCuratedSlugs.add(curated.slug);
+      // Curated fields override; GitHub fills missing
+      const merged: MergedProject = {
+        slug: repo.name, // use actual repo name as slug
+        act: "", // will assign later
+        title: curated.title,
+        tagline: curated.tagline,
+        description: curated.description || repoDescription,
+        category: curated.category,
+        stack: curated.stack.length ? curated.stack : (repo.topics.length ? repo.topics : (repo.language ? [repo.language] : [])),
+        role: curated.role,
+        problem: curated.problem,
+        solution: curated.solution,
+        highlights: curated.highlights,
+        liveUrl: curated.liveUrl || repoHomepage || undefined,
+        repoUrl: curated.repoUrl || repo.html_url,
+        featured: curated.featured,
         isAuto: false,
         embeddable: false,
-      });
+        order: curated.order,
+        pushedAt: repoPushedAt,
+      };
+      enriched.push(merged);
+    } else {
+      // Auto card
+      const category = guessCategory(repo.topics, repo.language);
+      const merged: MergedProject = {
+        slug: repo.name,
+        act: "",
+        title: humanizeRepoName(repo.name),
+        tagline: repoDescription,
+        description: repoDescription,
+        category,
+        stack: repo.topics.length ? repo.topics : (repo.language ? [repo.language] : []),
+        role: "Full-Stack Developer",
+        problem: "",
+        solution: "",
+        highlights: [],
+        liveUrl: repoHomepage || undefined,
+        repoUrl: repo.html_url,
+        featured: true,
+        isAuto: true,
+        embeddable: false,
+        pushedAt: repoPushedAt,
+      };
+      auto.push(merged);
     }
   }
 
-  // Auto cards: repos not matched to any curated project
-  const matchedRepoHomepages = new Set(merged.filter((m) => !m.isAuto).map((m) => m.liveUrl).filter(Boolean));
-  const autoRepos = reposWithHomepage.filter((repo) => !matchedRepoHomepages.has(repo.homepage));
+  // Dev-only warning for curated entries with no matching repo
+  if (process.env.NODE_ENV !== "production") {
+    for (const curated of curatedProjects) {
+      if (!matchedCuratedSlugs.has(curated.slug)) {
+        console.warn(`curated entry ${curated.slug} has no matching GitHub repo`);
+      }
+    }
+  }
 
-  // Compute embeddable for up to 12 projects in parallel
-  const embeddableChecks = autoRepos.slice(0, 12).map(async (repo) => ({
-    repo,
-    embeddable: await checkEmbeddable(repo.homepage),
+  // Compute embeddable for up to 12 projects (enriched + auto) in parallel
+  const allForEmbeddable = [...enriched, ...auto].slice(0, 12);
+  const embeddableChecks = allForEmbeddable.map(async (proj) => ({
+    slug: proj.slug,
+    embeddable: proj.liveUrl ? await checkEmbeddable(proj.liveUrl) : false,
   }));
   const embeddableResults = await Promise.allSettled(embeddableChecks);
   const embeddableMap = new Map<string, boolean>();
   embeddableResults.forEach((result) => {
     if (result.status === "fulfilled") {
-      embeddableMap.set(result.value.repo.name, result.value.embeddable);
+      embeddableMap.set(result.value.slug, result.value.embeddable);
     }
   });
 
-  let actCounter = curatedProjects.length + 1;
-  for (const repo of autoRepos) {
-    const category = guessCategory(repo.topics, repo.language);
-    merged.push({
-      slug: repo.name,
-      act: `Act ${actCounter++}`,
-      title: humanizeRepoName(repo.name),
-      tagline: repo.description || "No description provided",
-      description: repo.description || "",
-      category,
-      stack: repo.topics.length ? repo.topics : (repo.language ? [repo.language] : []),
-      role: "Full-Stack Developer",
-      problem: "",
-      solution: "",
-      highlights: [],
-      liveUrl: repo.homepage,
-      repoUrl: repo.html_url,
-      featured: true,
-      isAuto: true,
-      embeddable: embeddableMap.get(repo.name) ?? false,
-    });
+  // Assign embeddable
+  [...enriched, ...auto].forEach((p) => {
+    p.embeddable = embeddableMap.get(p.slug) ?? false;
+  });
+
+  // Ordering: enriched with order first (by order), then the rest by pushed_at desc
+  const enrichedWithOrder = enriched.filter((p) => typeof p.order === "number").sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const rest = [...enriched.filter((p) => typeof p.order !== "number"), ...auto].sort((a, b) => {
+    const ta = a.pushedAt ? new Date(a.pushedAt).getTime() : 0;
+    const tb = b.pushedAt ? new Date(b.pushedAt).getTime() : 0;
+    return tb - ta;
+  });
+
+  const ordered = [...enrichedWithOrder, ...rest];
+
+  // Assign act numerals (Roman)
+  function intToRoman(num: number): string {
+    const roman = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+    return roman[num] || num.toString();
   }
-
-  // Sort: curated first (already in order), then auto by pushed_at desc
-  const curatedPart = merged.filter((p) => !p.isAuto);
-  const autoPart = merged.filter((p) => p.isAuto).sort((a, b) => {
-    const repoA = reposWithHomepage.find((r) => r.name === a.slug);
-    const repoB = reposWithHomepage.find((r) => r.name === b.slug);
-    if (!repoA || !repoB) return 0;
-    return new Date(repoB.pushed_at).getTime() - new Date(repoA.pushed_at).getTime();
+  ordered.forEach((p, idx) => {
+    p.act = `Act ${intToRoman(idx + 1)}`;
   });
-
-  // Ensure curated projects keep their defined order
-  const curatedOrder = curatedProjects.map(p => p.slug);
-  const orderedCurated = curatedPart.sort((a, b) => {
-    const idxA = curatedOrder.indexOf(a.slug);
-    const idxB = curatedOrder.indexOf(b.slug);
-    return idxA - idxB;
-  });
-
-  const combined = [...orderedCurated, ...autoPart];
 
   // Resolve thumbnails for all projects
-  const thumbnailResults = await resolveThumbnailsForProjects(combined);
-  return combined.map((p) => ({
+  const thumbnailResults = await resolveThumbnailsForProjects(ordered);
+  return ordered.map((p) => ({
     ...p,
     thumbnail: thumbnailResults.get(p.slug)?.url ?? undefined,
   }));

@@ -2,7 +2,7 @@ export type ProjectCategory = "web" | "mobile" | "ai";
 
 export interface Project {
   slug: string;
-  act: string;
+  act?: string;
   title: string;
   tagline: string;
   description: string;
@@ -16,12 +16,13 @@ export interface Project {
   repoUrl?: string;
   featured: boolean;
   preview?: string;
+  order?: number;
 }
 
 export const projects: Project[] = [
   {
-    slug: "validly",
-    act: "Act I",
+    slug: "thevalidly",
+    order: 1,
     title: "Validly",
     tagline: "Multi-tenant certificate generation and verification platform",
     description:
@@ -43,8 +44,8 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "ayopilih",
-    act: "Act II",
+    slug: "AyoPilih",
+    order: 2,
     title: "AyoPilih",
     tagline: "Multi-tenant SaaS e-voting platform",
     description:
@@ -60,42 +61,8 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "go-attendance",
-    act: "Act III",
-    title: "Go Attendance",
-    tagline: "Flutter teacher attendance app with GPS geofencing",
-    description:
-      "Flutter teacher attendance app with GPS geofencing and face detection.",
-    category: "mobile",
-    stack: ["Flutter"],
-    role: "Mobile Developer",
-    problem: "",
-    solution: "",
-    highlights: [],
-    liveUrl: undefined,
-    repoUrl: undefined,
-    featured: true,
-  },
-  {
-    slug: "pemira-telu",
-    act: "Act IV",
-    title: "Pemira-Telu",
-    tagline: "Digital student election system",
-    description:
-      "Digital student election system with a Flutter mobile app and a Next.js admin dashboard.",
-    category: "web",
-    stack: ["Flutter", "Next.js"],
-    role: "Full-Stack Developer",
-    problem: "",
-    solution: "",
-    highlights: [],
-    liveUrl: undefined,
-    repoUrl: undefined,
-    featured: true,
-  },
-  {
-    slug: "overture",
-    act: "Act V",
+    slug: "Overture-by-Tika",
+    order: 3,
     title: "Overture by Atika",
     tagline: "An opera-orchestra themed portfolio",
     description:

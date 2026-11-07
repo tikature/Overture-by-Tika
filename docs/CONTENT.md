@@ -46,24 +46,20 @@ React JS, Vue JS, Tailwind CSS, Next JS, TypeScript, Node JS, Laravel, PHP, Flut
 
 ## Productions (projects.ts)
 
-Type: `{ slug, act, title, tagline, description, category: "web"|"mobile"|"ai", stack[], role, problem, solution, highlights[], liveUrl?, repoUrl?, featured, preview }`
+GitHub is the source of truth; curated data only enriches existing repos. Unmatched curated entries are ignored.
 
-1. **Act I: Validly** — slug `validly` — category web — "Multi-tenant certificate generation and verification platform."
-   - description: "End-to-end web platform for digital certificate generation with QR code verification, designed to scale into a B2B Software-as-a-Service product. Built as my undergraduate thesis for the client CV. Oemah Website Purwokerto."
+1. **Act I: Validly** — slug `thevalidly` — category web — "Multi-tenant certificate generation and verification platform."
+   - description: "End-to-end web platform for digital certificate generation with QR code verification, designed to scale into a B2S SaaS..."
    - stack: Laravel (add other stack only if confirmed in the public repo/README)
-   - highlights: "Officially registered computer-program copyright (Reg. No. 001273151, Directorate General of Intellectual Property, Ministry of Law of the Republic of Indonesia, June 2026)"; "QR-based certificate verification"; "Multi-tenant architecture ready for commercialization as B2B SaaS"
+   - highlights: ...
    - liveUrl: https://thevalidly.com
-2. **Act II: AyoPilih** — slug `ayopilih` — category web — "Multi-tenant SaaS e-voting platform for Indonesian schools and organizations."
+2. **Act II: AyoPilih** — slug `AyoPilih` — category web — "Multi-tenant SaaS e-voting platform for Indonesian schools and organizations."
    - liveUrl: https://ayopilih.site
-   - stack/highlights: only what the repo or site confirms; otherwise hide those blocks
-3. **Act III: Go Attendance** — slug `go-attendance` — category mobile — "Flutter teacher attendance app with GPS geofencing and face detection."
-   - stack: Flutter
-4. **Act IV: Pemira-Telu** — slug `pemira-telu` — category web+mobile — "Digital student election system with a Flutter mobile app and a Next.js admin dashboard."
-   - stack: Flutter, Next.js
-5. **Act V: Overture by Atika** — slug `overture` — category web — "This portfolio: an opera-orchestra themed stage for code."
+3. **Act V: Overture by Atika** — slug `Overture-by-Tika` — category web — "An opera-orchestra themed portfolio."
    - stack: Next.js, React, TypeScript, Tailwind CSS, Motion
    - repoUrl: add only if a public repo named like the project exists under github.com/tikature
-(Stitch placeholder acts — Invoice AI SaaS, Symphony Dashboard, Royal Couture Boutique, Atmospheric Forecast, Social Salon — are NOT real projects. Do not ship them.)
+
+(Stitch placeholder acts … are NOT real projects.)
       Case-study sections (per project; hide any block with no data): "The Premiere" (overview) · "The Score" (problem) · "The Performance" (solution & key features) · "The Ensemble" (stack & role) · "Curtain Call" (outcome/links).
 
 ### Auto-discovery from GitHub
