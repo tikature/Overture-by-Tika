@@ -13,11 +13,10 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
   const { t } = useI18n();
   const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-
   const stats = aboutData.stats.map((s, i) => {
     let value = s.value;
     let suffix = s.suffix;
-    if (i === 1) { // Productions Staged
+    if (i === 1) {
       value = productionsCount;
       suffix = "";
     }
@@ -37,7 +36,7 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
           title={
             <>
               {aboutData.title.before}
-              <span className="italic text-darkCream font-serif">{aboutData.title.accent}</span>
+              <span className="italic text-cream font-serif">{aboutData.title.accent}</span>
             </>
           }
         >
@@ -61,6 +60,7 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
                 fill="none"
                 viewBox="0 0 500 420"
                 xmlns="http://www.w3.org/2000/svg"
+                style={{ colorScheme: "dark" }}
               >
                 <defs>
                   <linearGradient
@@ -71,14 +71,14 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
                     y1="40"
                     y2="360"
                   >
-                    <stop stopColor="#9B1D30" />
-                    <stop offset="0.5" stopColor="#800020" />
-                    <stop offset="1" stopColor="#3B0A12" />
+                    <stop stopColor="var(--color-vintage-burgundy)" />
+                    <stop offset="0.5" stopColor="var(--color-burgundy)" />
+                    <stop offset="1" stopColor="var(--color-dark-burgundy)" />
                   </linearGradient>
                   <linearGradient id="creamTrimGrad" x1="0" x2="1" y1="0" y2="0">
-                    <stop stopColor="#DCC8A3" />
-                    <stop offset="0.5" stopColor="#FFF5E1" />
-                    <stop offset="1" stopColor="#DCC8A3" />
+                    <stop stopColor="var(--color-dark-cream)" />
+                    <stop offset="0.5" stopColor="var(--color-cream)" />
+                    <stop offset="1" stopColor="var(--color-dark-cream)" />
                   </linearGradient>
                 </defs>
                 <path
@@ -90,45 +90,45 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
                 <path
                   d="M 60 380 L 60 220 A 190 190 0 0 1 440 220 L 440 380"
                   fill="none"
-                  stroke="#5E0F1A"
+                  stroke="var(--color-oxblood)"
                   strokeWidth="3"
                 />
                 <polygon
-                  fill="#FFF5E1"
+                  fill="var(--color-cream)"
                   points="250,8 270,35 230,35"
-                  stroke="#DCC8A3"
+                  stroke="var(--color-dark-cream)"
                   strokeWidth="1.5"
                 />
-                <circle cx="250" cy="22" fill="#800020" r="5" />
+                <circle cx="250" cy="22" fill="var(--color-burgundy)" r="5" />
                 <path
                   d="M 60 160 Q 150 140 250 180 Q 350 140 440 160 L 440 360 C 370 300 330 240 310 180 C 270 230 230 230 190 180 C 170 240 130 300 60 360 Z"
                   fill="url(#archDrapeBurgundy)"
-                  stroke="#DCC8A3"
+                  stroke="var(--color-dark-cream)"
                   strokeWidth="1.5"
                 />
-                <line stroke="#DCC8A3" strokeWidth="1.5" x1="250" x2="250" y1="60" y2="130" />
-                <ellipse cx="250" cy="132" fill="#FFF5E1" rx="36" ry="7" />
-                <ellipse cx="250" cy="150" fill="#DCC8A3" rx="22" ry="5" />
-                <polygon fill="#FFF5E1" points="250,156 246,175 254,175" />
-                <polygon fill="#FFF5E1" points="230,138 227,152 233,152" />
-                <polygon fill="#FFF5E1" points="270,138 267,152 273,152" />
-                <circle cx="250" cy="124" fill="#FFF5E1" r="3.5" />
-                <circle cx="235" cy="126" fill="#F7ECD4" r="3" />
-                <circle cx="265" cy="126" fill="#F7ECD4" r="3" />
+                <line stroke="var(--color-dark-cream)" strokeWidth="1.5" x1="250" x2="250" y1="60" y2="130" />
+                <ellipse cx="250" cy="132" fill="var(--color-cream)" rx="36" ry="7" />
+                <ellipse cx="250" cy="150" fill="var(--color-dark-cream)" rx="22" ry="5" />
+                <polygon fill="var(--color-cream)" points="250,156 246,175 254,175" />
+                <polygon fill="var(--color-cream)" points="230,138 227,152 233,152" />
+                <polygon fill="var(--color-cream)" points="270,138 267,152 273,152" />
+                <circle cx="250" cy="124" fill="var(--color-cream)" r="3.5" />
+                <circle cx="235" cy="126" fill="var(--color-ivory-cream)" r="3" />
+                <circle cx="265" cy="126" fill="var(--color-ivory-cream)" r="3" />
                 <rect
-                  fill="#24070D"
+                  fill="var(--color-obsidian-burgundy)"
                   height="24"
                   rx="4"
-                  stroke="#DCC8A3"
+                  stroke="var(--color-dark-cream)"
                   strokeWidth="2"
                   width="440"
                   x="30"
                   y="380"
                 />
-                <line stroke="#FFF5E1" strokeWidth="1.5" x1="40" x2="460" y1="384" y2="384" />
+                <line stroke="var(--color-cream)" strokeWidth="1.5" x1="40" x2="460" y1="384" y2="384" />
               </svg>
             </div>
-            <p className="text-xs uppercase tracking-[0.25em] text-darkCream font-opera font-bold mt-2">
+            <p className="text-xs uppercase tracking-[0.25em] text-dark-cream font-opera font-bold mt-2">
               {aboutData.archCaption}
             </p>
           </div>
@@ -138,10 +138,10 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
             {aboutData.principles.map((principle, idx) => (
               <div
                 key={idx}
-                className="bg-obsidianBurgundy/80 border border-darkCream/20 p-6 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all shadow-lg min-w-0"
+                className="bg-obsidian-burgundy/80 border border-dark-cream/20 p-6 rounded-2xl backdrop-blur-md hover:border-dark-cream transition-all shadow-lg min-w-0"
               >
                 <h3 className="text-cream font-bold text-base mb-2 font-opera flex items-center">
-                  <svg aria-hidden="true" className="w-4 h-4 mr-2 text-wineRed" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" className="w-4 h-4 mr-2 text-wine-red" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     {idx === 0 ? (
                       <>
                         <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594-1.594l-1.051-5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594z"></path>
@@ -159,7 +159,7 @@ export default function AboutSection({ productionsCount }: AboutSectionProps) {
                   </svg>
                   {principle.title}
                 </h3>
-                <p className="text-softCream/80 text-xs sm:text-sm leading-relaxed font-body min-w-0">
+                <p className="text-soft-cream/80 text-xs sm:text-sm leading-relaxed font-body min-w-0">
                   {principle.description}
                 </p>
               </div>
@@ -224,12 +224,12 @@ function StatCard({
   return (
     <div
       ref={ref}
-      className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all group shadow-lg min-w-0"
+      className="bg-obsidian-burgundy/80 border border-dark-cream/20 p-5 rounded-2xl backdrop-blur-md hover:border-dark-cream transition-all group shadow-lg min-w-0"
     >
-      <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivoryCream transition-colors">
+      <span className="text-3xl sm:text-4xl font-extrabold text-cream font-display group-hover:text-ivory-cream transition-colors">
         {count}{stat.suffix}
       </span>
-      <p className="text-xs uppercase tracking-wider text-warmCream/70 mt-1 font-opera font-semibold min-w-0">
+      <p className="text-xs uppercase tracking-wider text-warm-cream/70 mt-1 font-opera font-semibold min-w-0">
         {stat.label}
       </p>
     </div>

@@ -110,7 +110,11 @@
   }
 
   .proscenium-arch {
-    background: radial-gradient(ellipse at 50% 0%, rgba(94,15,26,0.45) 0%, rgba(27,5,9,0.98) 75%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(var(--color-oxblood), 0.45) 0%, rgba(var(--color-deep-abyss), 0.98) 75%);
+  }
+
+  .light-theme .proscenium-arch {
+    background: radial-gradient(ellipse at 50% 0%, rgba(var(--color-oxblood), 0.25) 0%, rgba(var(--color-deep-abyss), 0.9) 75%);
   }
 
   .subtle-cream-ember {

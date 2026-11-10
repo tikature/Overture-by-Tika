@@ -68,9 +68,6 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
 
   const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Reset photoIndex when album changes - use key on modal in parent instead
-  // This effect is kept for other side effects but we don't reset photoIndex here
-
   const goToPrevPhoto = useCallback(() => {
     if (currentAlbum && photoIndex > 0) {
       if (!prefersReducedMotion) setIsAnimating(true);
@@ -148,9 +145,19 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
   const categoryLabel = t(CategoryKeys[currentAlbum.category]) || currentAlbum.category;
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
+  // Semantic color classes that work in both themes:
+  // Panel: bg-obsidian-burgundy (dark: #24070D, light: #F7ECD4)
+  // Border: border-dark-cream (dark: #DCC8A3, light: #9B1D30)
+  // Primary text: text-soft-cream (dark: #EFE2C6, light: #1B0509)
+  // Secondary text: text-warm-cream (dark: #E6D7B9, light: #B0303C)
+  // Accent text: text-cream (dark: #FFF5E1, light: #1B0509)
+  // Button bg: bg-dark-burgundy (dark: #3B0A12, light: #EFE2C6)
+  // Button border: border-dark-cream
+  // Button hover: hover:border-cream (dark: #FFF5E1, light: #1B0509)
+
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-deep-abyss/70 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="gallery-modal-title"
@@ -159,7 +166,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
     >
       <div
         className={cn(
-          "relative w-full overflow-hidden bg-[#1E080D] border border-darkCream/30 rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col",
+          "relative w-full overflow-hidden bg-obsidian-burgundy border border-dark-cream rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.5)] flex flex-col",
           isMobile ? "h-[92dvh] w-full max-w-full" : "w-[min(1100px,94vw)] h-[min(86dvh,760px)]"
         )}
         onClick={e => e.stopPropagation()}
@@ -167,7 +174,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
         {/* Close button - always visible top right */}
         <button
           ref={closeButtonRef}
-          className="absolute top-3 right-3 z-30 w-11 h-11 rounded-full bg-[#140508]/80 border border-darkCream/30 text-cream hover:border-cream hover:text-cream flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ivoryCream"
+          className="absolute top-3 right-3 z-30 w-11 h-11 rounded-full bg-dark-burgundy/80 border border-dark-cream text-cream hover:border-cream hover:text-cream flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream"
           onClick={onClose}
           aria-label={t("gallery.close")}
         >
@@ -184,7 +191,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                   <button
                     ref={previousPhotoRef}
                     className={cn(
-                      "absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#140508]/80 border border-darkCream/30 text-cream hover:border-cream hover:text-cream transition-colors",
+                      "absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-dark-burgundy/80 border border-dark-cream text-cream hover:border-cream hover:text-cream transition-colors",
                       prefersReducedMotion ? "transition-none" : "transition-opacity duration-300"
                     )}
                     onClick={goToPrevPhoto}
@@ -197,7 +204,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                   <button
                     ref={nextPhotoRef}
                     className={cn(
-                      "absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#140508]/80 border border-darkCream/30 text-cream hover:border-cream hover:text-cream transition-colors",
+                      "absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-dark-burgundy/80 border border-dark-cream text-cream hover:border-cream hover:text-cream transition-colors",
                       prefersReducedMotion ? "transition-none" : "transition-opacity duration-300"
                     )}
                     onClick={goToNextPhoto}
@@ -230,7 +237,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
               {/* Counter */}
               {currentAlbum.photos.length > 1 && (
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-                  <span className="text-[11px] font-opera uppercase tracking-wider text-cream bg-[#140508]/80 px-3 py-1 rounded-full border border-darkCream/30">
+                  <span className="text-[11px] font-opera uppercase tracking-wider text-cream bg-dark-burgundy/80 px-3 py-1 rounded-full border border-dark-cream">
                     {t("gallery.counter", { current: String(photoIndex + 1), total: String(currentAlbum.photos.length) })}
                   </span>
                 </div>
@@ -247,22 +254,22 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                 {locale === "id" && currentAlbum.title_id ? currentAlbum.title_id : currentAlbum.title}
               </h2>
 
-              <div className="flex flex-wrap items-center gap-3 text-[11px] font-opera uppercase tracking-wider text-warmCream/70">
+              <div className="flex flex-wrap items-center gap-3 text-[11px] font-opera uppercase tracking-wider text-warm-cream">
                 <span>{normalizePeriod(currentAlbum.period)}</span>
                 <span className="text-cream">{currentAlbum.role}</span>
               </div>
 
-              <p className="text-base text-softCream/85 leading-relaxed">
+              <p className="text-base text-soft-cream leading-relaxed">
                 {locale === "id" && currentAlbum.summary_id ? currentAlbum.summary_id : currentAlbum.summary}
               </p>
 
-              <p className="text-sm text-softCream/85 leading-relaxed">
+              <p className="text-sm text-soft-cream/85 leading-relaxed">
                 {locale === "id" && currentAlbum.description_id ? currentAlbum.description_id : currentAlbum.description}
               </p>
 
               {currentPhoto.caption && (
-                <p className="text-sm text-ivoryCream/70 italic border-t border-darkCream/20 pt-3">
-                  <span className="text-[10px] font-opera uppercase tracking-wider text-warmCream/50 block mb-1">{t("gallery.caption") || "Caption"}</span>
+                <p className="text-sm text-warm-cream italic border-t border-dark-cream/30 pt-3">
+                  <span className="text-[10px] font-opera uppercase tracking-wider text-warm-cream/50 block mb-1">{t("gallery.caption") || "Caption"}</span>
                   {currentPhoto.caption}
                 </p>
               )}
@@ -280,7 +287,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
               {currentAlbum.link && (
                 <a
                   href={currentAlbum.link.href}
-                  className="inline-flex items-center gap-2 mt-4 px-6 py-3 text-sm font-opera font-bold uppercase tracking-widest text-cream bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed border border-darkCream/40 rounded-full hover:border-cream hover:-translate-y-0.5 transition-all w-fit"
+                  className="inline-flex items-center gap-2 mt-4 px-6 py-3 text-sm font-opera font-bold uppercase tracking-widest text-deep-abyss bg-gradient-to-r from-cream via-ivory-cream to-warm-cream border border-dark-cream/40 rounded-full hover:border-cream hover:-translate-y-0.5 transition-all w-fit"
                 >
                   {currentAlbum.link.label}
                 </a>
@@ -297,7 +304,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                   <button
                     ref={previousPhotoRef}
                     className={cn(
-                      "absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-[#140508]/80 border border-darkCream/30 text-cream hover:border-cream hover:text-cream hover:bg-[#140508] transition-all duration-300",
+                      "absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-dark-burgundy/80 border border-dark-cream text-cream hover:border-cream hover:text-cream hover:bg-dark-burgundy transition-all duration-300",
                       prefersReducedMotion ? "transition-none" : ""
                     )}
                     onClick={goToPrevPhoto}
@@ -310,7 +317,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                   <button
                     ref={nextPhotoRef}
                     className={cn(
-                      "absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-[#140508]/80 border border-darkCream/30 text-cream hover:border-cream hover:text-cream hover:bg-[#140508] transition-all duration-300",
+                      "absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-dark-burgundy/80 border border-dark-cream text-cream hover:border-cream hover:text-cream hover:bg-dark-burgundy transition-all duration-300",
                       prefersReducedMotion ? "transition-none" : ""
                     )}
                     onClick={goToNextPhoto}
@@ -344,7 +351,7 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
               {/* Counter */}
               {currentAlbum.photos.length > 1 && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                  <span className="text-[11px] font-opera uppercase tracking-wider text-cream bg-[#140508]/80 px-3 py-1 rounded-full border border-darkCream/30">
+                  <span className="text-[11px] font-opera uppercase tracking-wider text-cream bg-dark-burgundy/80 px-3 py-1 rounded-full border border-dark-cream">
                     {t("gallery.counter", { current: String(photoIndex + 1), total: String(currentAlbum.photos.length) })}
                   </span>
                 </div>
@@ -362,22 +369,22 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                   {locale === "id" && currentAlbum.title_id ? currentAlbum.title_id : currentAlbum.title}
                 </h2>
 
-                <div className="flex flex-wrap items-center gap-3 text-[11px] font-opera uppercase tracking-wider text-warmCream/70">
+                <div className="flex flex-wrap items-center gap-3 text-[11px] font-opera uppercase tracking-wider text-warm-cream">
                   <span>{normalizePeriod(currentAlbum.period)}</span>
                   <span className="text-cream">{currentAlbum.role}</span>
                 </div>
 
-                <p className="text-base text-softCream/85 leading-relaxed">
+                <p className="text-base text-soft-cream leading-relaxed">
                   {locale === "id" && currentAlbum.summary_id ? currentAlbum.summary_id : currentAlbum.summary}
                 </p>
 
-                <p className="text-sm text-softCream/85 leading-relaxed">
+                <p className="text-sm text-soft-cream/85 leading-relaxed">
                   {locale === "id" && currentAlbum.description_id ? currentAlbum.description_id : currentAlbum.description}
                 </p>
 
                 {currentPhoto.caption && (
-                  <p className="text-sm text-ivoryCream/70 italic border-t border-darkCream/20 pt-3">
-                    <span className="text-[10px] font-opera uppercase tracking-wider text-warmCream/50 block mb-1">{t("gallery.caption") || "Caption"}</span>
+                  <p className="text-sm text-warm-cream italic border-t border-dark-cream/30 pt-3">
+                    <span className="text-[10px] font-opera uppercase tracking-wider text-warm-cream/50 block mb-1">{t("gallery.caption") || "Caption"}</span>
                     {currentPhoto.caption}
                   </p>
                 )}
@@ -393,10 +400,10 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
                 )}
 
                 {currentAlbum.link && (
-                  <div className="pt-4 border-t border-darkCream/20">
+                  <div className="pt-4 border-t border-dark-cream/20">
                     <a
                       href={currentAlbum.link.href}
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-opera font-bold uppercase tracking-widest text-cream bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed border border-darkCream/40 rounded-full hover:border-cream hover:-translate-y-0.5 transition-all w-fit"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-opera font-bold uppercase tracking-widest text-deep-abyss bg-gradient-to-r from-cream via-ivory-cream to-warm-cream border border-dark-cream/40 rounded-full hover:border-cream hover:-translate-y-0.5 transition-all w-fit"
                     >
                       {currentAlbum.link.label}
                     </a>
