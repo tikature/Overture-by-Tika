@@ -10,7 +10,7 @@ function ThumbnailImage({ src }: { src: string }) {
   const [failed, setFailed] = React.useState(false);
   if (failed) {
     return (
-      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deepAbyss flex items-center justify-center">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deep-abyss flex items-center justify-center">
         <svg className="w-12 h-12 text-burgundy/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.5" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 9h6v6H9V9z" />
@@ -19,7 +19,7 @@ function ThumbnailImage({ src }: { src: string }) {
     );
   }
   return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deepAbyss">
+    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deep-abyss">
       <Image
         src={src}
         alt=""
@@ -29,7 +29,7 @@ function ThumbnailImage({ src }: { src: string }) {
         loading="lazy"
         onError={() => setFailed(true)}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-deepAbyss via-deepAbyss/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-deep-abyss via-deep-abyss/50 to-transparent pointer-events-none" />
     </div>
   );
 }
@@ -101,8 +101,8 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
               onClick={() => { setFilter(cat); setShowAll(false); }}
               className={`px-4 py-2 rounded-full text-xs font-opera font-semibold uppercase tracking-wider transition-colors ${
                 filter === cat
-                  ? "bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed text-cream shadow-[0_0_20px_rgba(128,0,32,0.7)]"
-                  : "bg-obsidianBurgundy/90 border border-darkCream/25 text-softCream hover:border-cream hover:text-cream"
+                  ? "bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red text-fg shadow-[0_0_20px_rgba(128,0,32,0.7)]"
+                  : "bg-surface-strong/90 border border-border/25 text-fg-muted hover:border-fg hover:text-fg"
               }`}
             >
               {cat === "all" ? t("productions.filters.all") : t(`productions.filters.${cat}`)}
@@ -115,29 +115,27 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
           {displayProjects.map((project) => (
             <article
               key={project.slug}
-              className="bg-obsidianBurgundy border border-darkCream/20 rounded-2xl overflow-hidden opera-border-hover flex flex-col group shadow-xl"
+              className="bg-surface border border-border/20 rounded-2xl overflow-hidden opera-border-hover flex flex-col group shadow-xl"
             >
               {/* Preview area */}
-              <div className="relative h-48 bg-deepAbyss overflow-hidden p-4 flex flex-col justify-between border-b border-darkCream/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-oxblood via-darkBurgundy/40 to-deepAbyss" />
+              <div className="relative h-48 bg-deep-abyss overflow-hidden p-4 flex flex-col justify-between border-b border-border/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-oxblood via-surface-strong/40 to-deep-abyss" />
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-xs font-opera px-2.5 py-0.5 rounded bg-burgundy/60 text-cream border border-darkCream/30">
+                  <span className="text-xs font-opera px-2.5 py-0.5 rounded bg-burgundy/60 text-fg border border-border/30">
                     {/* Roman numeral act */}
                     {(() => {
-                      // Determine index in original merged order for roman numeral
                       const allIndex = projects.findIndex(p => p.slug === project.slug);
                       return intToRoman(allIndex + 1);
                     })()} • {categoryLabels[project.category]}
                   </span>
                   <span className="w-2.5 h-2.5 rounded-full bg-cream shadow-[0_0_8px_#FFF5E1]" />
                 </div>
-                <div className="relative z-10 bg-deepAbyss/90 rounded-lg p-3 border border-darkCream/25">
+                <div className="relative z-10 bg-deep-abyss/90 rounded-lg p-3 border border-border/25">
                   {/* Thumbnail or placeholder */}
-{project.thumbnail ? (
-                      <ThumbnailImage src={project.thumbnail} />
-                    ) : (
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deepAbyss flex items-center justify-center">
-                      {/* Stylized placeholder: faint browser-window outline + card-suit glyph */}
+                  {project.thumbnail ? (
+                    <ThumbnailImage src={project.thumbnail} />
+                  ) : (
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-deep-abyss flex items-center justify-center">
                       <svg className="w-12 h-12 text-burgundy/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.5" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 9h6v6H9V9z" />
@@ -149,39 +147,39 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-cream group-hover:text-darkCream transition-colors font-display mb-2">
+                  <h3 className="text-xl font-bold text-fg group-hover:text-fg-muted transition-colors font-display mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-softCream/80 mb-4 leading-relaxed font-body">
+                  <p className="text-xs text-fg-muted/80 mb-4 leading-relaxed font-body">
                     {project.tagline}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.stack.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="text-[11px] font-opera px-2.5 py-1 rounded-md bg-darkBurgundy/80 text-ivoryCream border border-darkCream/25">
+                      <span key={i} className="text-[11px] font-opera px-2.5 py-1 rounded-md bg-surface-strong/80 text-fg-muted border border-border/25">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-darkCream/10">
+                <div className="flex items-center justify-between pt-4 border-t border-border/10">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-darkCream hover:text-cream transition-colors"
+                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-fg-subtle hover:text-fg transition-colors"
                     >
                       <span>View Production</span>
-                      <LucideArrowUpRight className="w-4 h-4 text-wineRed" />
+                      <LucideArrowUpRight className="w-4 h-4 text-wine-red" />
                     </a>
                   )}
                   {(!project.liveUrl || project.liveUrl === "") && (
                     <a
                       href={`/productions/${project.slug}`}
-                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-darkCream hover:text-cream transition-colors"
+                      className="inline-flex items-center space-x-2 text-xs font-opera font-bold text-fg-subtle hover:text-fg transition-colors"
                     >
                       <span>View Production</span>
-                      <LucideArrowUpRight className="w-4 h-4 text-wineRed" />
+                      <LucideArrowUpRight className="w-4 h-4 text-wine-red" />
                     </a>
                   )}
                   <div className="flex items-center space-x-3">
@@ -191,7 +189,7 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                         target="_blank"
                         rel="noreferrer"
                         aria-label="GitHub"
-                        className="text-warmCream/80 hover:text-cream transition-colors"
+                        className="text-fg-subtle/80 hover:text-fg transition-colors"
                       >
                         <LucideGithub className="w-4 h-4" />
                       </a>
@@ -199,8 +197,8 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                     {project.liveUrl && project.embeddable && (
                       <button
                         onClick={() => openModal(project, "desktop")}
-                        aria-label={t("productions.livePreview")}
-                        className="text-warmCream/80 hover:text-cream transition-colors"
+                        aria-label="Live Preview"
+                        className="text-fg-subtle/80 hover:text-fg transition-colors"
                       >
                         <LucideMonitor className="w-4 h-4" />
                       </button>
@@ -210,8 +208,8 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={t("productions.openSite")}
-                        className="text-warmCream/80 hover:text-cream transition-colors"
+                        aria-label="Open site"
+                        className="text-fg-subtle/80 hover:text-fg transition-colors"
                       >
                         <LucideMousePointer2 className="w-4 h-4" />
                       </a>
@@ -228,7 +226,7 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(true)}
-              className="px-6 py-2 text-sm font-opera font-semibold uppercase tracking-wider text-cream bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed rounded-full hover:shadow-[0_0_20px_rgba(128,0,32,0.7)] transition-all"
+              className="px-6 py-2 text-sm font-opera font-semibold uppercase tracking-wider text-fg bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red rounded-full hover:shadow-[0_0_20px_rgba(128,0,32,0.7)] transition-all"
             >
               {t("productions.showAll", { count: String(filteredProjects.length) })}
             </button>
@@ -239,18 +237,18 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
       {/* Live Preview Modal */}
       {modalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-deepAbyss/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-deep-abyss/90 backdrop-blur-sm"
           onClick={closeModal}
           role="dialog"
           aria-modal="true"
-          aria-label={t("productions.livePreview")}
+          aria-label="Live Preview"
         >
-          <div className="relative w-full h-full max-w-6xl max-h-[90vh] mx-4 my-8 bg-obsidianBurgundy border border-darkCream/20 rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full h-full max-w-6xl max-h-[90vh] mx-4 my-8 bg-surface border border-border/20 rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
             {/* Browser chrome */}
-            <div className="flex items-center gap-2 px-4 py-2 bg-darkBurgundy border-b border-darkCream/20">
+            <div className="flex items-center gap-2 px-4 py-2 bg-surface-strong border-b border-border/20">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-wineRed" />
-                <div className="w-3 h-3 rounded-full bg-vintageBurgundy" />
+                <div className="w-3 h-3 rounded-full bg-wine-red" />
+                <div className="w-3 h-3 rounded-full bg-vintage-burgundy" />
                 <div className="w-3 h-3 rounded-full bg-oxblood" />
               </div>
               <div className="flex-1 flex items-center justify-center">
@@ -258,23 +256,23 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                   type="text"
                   readOnly
                   value={modalOpen.project.liveUrl}
-                  className="w-full max-w-md px-3 py-1.5 text-[11px] font-opera text-softCream bg-deepAbyss border border-darkCream/25 rounded-full truncate"
+                  className="w-full max-w-md px-3 py-1.5 text-[11px] font-opera text-fg-muted bg-deep-abyss border border-border/25 rounded-full truncate"
                 />
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setModalOpen((prev) => prev ? { ...prev, viewport: prev.viewport === "desktop" ? "mobile" : "desktop" } : null)}
-                  className="px-2 py-1 text-[10px] font-opera uppercase tracking-wider text-softCream/80 hover:text-cream transition-colors"
+                  className="px-2 py-1 text-[10px] font-opera uppercase tracking-wider text-fg-muted/80 hover:text-fg transition-colors"
                 >
-                  {modalOpen.viewport === "desktop" ? t("productions.mobileView") : t("productions.desktopView")}
+                  {modalOpen.viewport === "desktop" ? "Mobile view" : "Desktop view"}
                 </button>
                 <a
                   href={modalOpen.project.liveUrl!}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 text-[10px] font-opera font-bold uppercase tracking-wider text-cream bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed rounded-full hover:shadow-[0_0_15px_rgba(128,0,32,0.7)] transition-all"
+                  className="px-3 py-1.5 text-[10px] font-opera font-bold uppercase tracking-wider text-fg bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red rounded-full hover:shadow-[0_0_15px_rgba(128,0,32,0.7)] transition-all"
                 >
-                  {t("productions.openInNewTab")}
+                  Open in new tab
                 </a>
               </div>
             </div>
@@ -282,7 +280,7 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
             <div className={`relative ${modalOpen.viewport === "mobile" ? "flex items-center justify-center p-4" : "w-full h-[calc(100%-48px)]"}`}>
               <iframe
                 src={modalOpen.project.liveUrl}
-                className={`w-full ${modalOpen.viewport === "mobile" ? "w-[390px] h-[844px]" : "h-full"} border-0 bg-deepAbyss`}
+                className={`w-full ${modalOpen.viewport === "mobile" ? "w-[390px] h-[844px]" : "h-full"} border-0 bg-deep-abyss`}
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -290,8 +288,8 @@ export default function ProductionsGrid({ projects }: ProductionsGridProps) {
                 style={{ opacity: modalOpen ? 1 : 0 }}
                 onLoad={() => {}}
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-deepAbyss animate-pulse pointer-events-none">
-                <div className="w-8 h-8 rounded-full bg-burgundy/50 border border-cream/20" />
+              <div className="absolute inset-0 flex items-center justify-center bg-deep-abyss animate-pulse pointer-events-none">
+                <div className="w-8 h-8 rounded-full bg-burgundy/50 border border-fg/20" />
               </div>
             </div>
           </div>

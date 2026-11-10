@@ -16,10 +16,10 @@ export default function LaurelsGrid() {
     <section id="certificates" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-block text-xs uppercase tracking-[0.25em] text-dark-cream font-opera font-bold mb-2">
+          <div className="inline-block text-xs uppercase tracking-[0.25em] text-fg-muted font-opera font-bold mb-2">
             THE HALL OF FAME
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-cream font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-fg font-display">
             Laurels
           </h2>
         </div>
@@ -33,13 +33,13 @@ export default function LaurelsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-obsidian-burgundy border border-dark-cream/20 rounded-2xl p-6 opera-border-hover flex flex-col h-full"
+              className="bg-surface border border-border/20 rounded-2xl p-6 opera-border-hover flex flex-col h-full"
             >
               <div className="text-xs uppercase tracking-wider text-wine-red font-opera font-bold mb-2">
                 {cert.issuer}
               </div>
-              <h3 className="text-cream font-bold text-lg font-display mb-2">{cert.title}</h3>
-              <div className="space-y-1 text-xs text-warm-cream/70 font-body">
+              <h3 className="text-fg font-bold text-lg font-display mb-2">{cert.title}</h3>
+              <div className="space-y-1 text-xs text-fg-subtle/70 font-body">
                 {cert.year && <p>Conferred: {cert.year}</p>}
                 {cert.credentialId && <p>Credential: {cert.credentialId}</p>}
               </div>
@@ -48,7 +48,7 @@ export default function LaurelsGrid() {
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center space-x-1 text-xs font-opera font-bold text-warm-cream hover:text-cream transition-colors mt-4 pt-4 border-t border-dark-cream/10"
+                  className="inline-flex items-center space-x-1 text-xs font-opera font-bold text-fg-subtle hover:text-fg transition-colors mt-4 pt-4 border-t border-border/10"
                 >
                   <span>{t("laurels.verify") || "Verify"}</span>
                   <LucideArrowRight className="w-3 h-3 text-wine-red" />
@@ -68,13 +68,13 @@ export default function LaurelsGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: featured.length * 0.1 }}
-            className="bg-obsidian-burgundy border-2 border-dashed border-cream/30 rounded-2xl p-6 opera-border-hover flex flex-col h-full items-center justify-center text-center hover:border-cream hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cream focus:ring-offset-2 focus:ring-offset-deep-abyss"
+            className="bg-surface border-2 border-dashed border-border/30 rounded-2xl p-6 opera-border-hover flex flex-col h-full items-center justify-center text-center hover:border-fg hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fg focus:ring-offset-2 focus:ring-offset-bg"
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(128,0,32,0.6)] group-hover:translate-x-1 transition-transform duration-300">
-              <LucideArrowRight className="w-8 h-8 text-cream" />
+              <LucideArrowRight className="w-8 h-8 text-fg" />
             </div>
-            <h3 className="text-cream font-bold text-lg font-display mb-1">{t("laurels.viewAllTitle")}</h3>
-            <p className="text-soft-cream/80 text-sm font-body">{t("laurels.viewAllCount", { count: String(totalCount) })}</p>
+            <h3 className="text-fg font-bold text-lg font-display mb-1">{t("laurels.viewAllTitle")}</h3>
+            <p className="text-fg-muted/80 text-sm font-body">{t("laurels.viewAllCount", { count: String(totalCount) })}</p>
           </motion.a>
         </div>
       </div>

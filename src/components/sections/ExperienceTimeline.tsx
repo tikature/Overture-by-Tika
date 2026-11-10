@@ -20,8 +20,8 @@ export default function ExperienceTimeline() {
           onClick={() => setFilter("work")}
           className={`text-xs font-opera uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all ${
             filter === "work"
-              ? "bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed text-cream shadow-[0_0_12px_rgba(128,0,32,0.6)]"
-              : "text-warmCream/70 border-darkCream/25 hover:text-cream hover:border-cream"
+              ? "bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red text-fg shadow-[0_0_12px_rgba(128,0,32,0.6)]"
+              : "text-fg-subtle/70 border-border/25 hover:text-fg hover:border-fg"
           }`}
         >
           {t("experience.tabs.work")}
@@ -30,8 +30,8 @@ export default function ExperienceTimeline() {
           onClick={() => setFilter("organization")}
           className={`text-xs font-opera uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all ${
             filter === "organization"
-              ? "bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed text-cream shadow-[0_0_12px_rgba(128,0,32,0.6)]"
-              : "text-warmCream/70 border-darkCream/25 hover:text-cream hover:border-cream"
+              ? "bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red text-fg shadow-[0_0_12px_rgba(128,0,32,0.6)]"
+              : "text-fg-subtle/70 border-border/25 hover:text-fg hover:border-fg"
           }`}
         >
           {t("experience.tabs.organizations")}
@@ -47,20 +47,20 @@ export default function ExperienceTimeline() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="relative pl-8 border-l border-darkCream/20"
+            className="relative pl-8 border-l border-border/20"
           >
             <div className="absolute left-0 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-cream shadow-[0_0_8px_#FFF5E1]" />
-            <div className="absolute left-0 top-5 bottom-0 w-0.5 bg-darkCream/20" />
+            <div className="absolute left-0 top-5 bottom-0 w-0.5 bg-border/20" />
 
-            <div className="bg-obsidianBurgundy/80 border border-darkCream/20 p-5 rounded-2xl backdrop-blur-md hover:border-darkCream transition-all">
+            <div className="bg-surface/80 border border-border/20 p-5 rounded-2xl backdrop-blur-md hover:border-border transition-all">
               <div className="flex flex-col gap-1 mb-3">
-                <h3 className="text-cream font-bold text-lg font-display">
+                <h3 className="text-fg font-bold text-lg font-display">
                   {exp.role}
                 </h3>
-                <p className="text-warmCream/80 text-sm font-opera uppercase tracking-wider">
+                <p className="text-fg-subtle/80 text-sm font-opera uppercase tracking-wider">
                   {exp.org}
                 </p>
-                <p className="text-darkCream/70 text-xs font-body">
+                <p className="text-fg-muted/70 text-xs font-body">
                   {exp.period}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export default function ExperienceTimeline() {
                 {exp.bullets.map((bullet, bi) => (
                   <li
                     key={bi}
-                    className="text-softCream/80 text-sm font-body flex items-start gap-2"
+                    className="text-fg-muted/80 text-sm font-body flex items-start gap-2"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-cream mt-1.5 flex-shrink-0" />
                     {bullet}
@@ -82,7 +82,7 @@ export default function ExperienceTimeline() {
                   {exp.stack.map((tech, ti) => (
                     <span
                       key={ti}
-                      className="text-[10px] font-opera px-2 py-0.5 rounded bg-darkBurgundy/80 text-ivoryCream border border-darkCream/25"
+                      className="text-[10px] font-opera px-2 py-0.5 rounded bg-surface-strong/80 text-fg-muted border border-border/25"
                     >
                       {tech}
                     </span>

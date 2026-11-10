@@ -21,7 +21,7 @@ export default function SkillBars() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: catIndex * 0.1 }}
         >
-          <h4 className="text-cream font-opera uppercase tracking-wider text-sm mb-4 font-semibold">
+          <h4 className="text-fg font-opera uppercase tracking-wider text-sm mb-4 font-semibold">
             {category.name}
           </h4>
           <div className="space-y-4">
@@ -34,14 +34,14 @@ export default function SkillBars() {
                 transition={{ duration: 1.2, delay: catIndex * 0.1 + skillIndex * 0.05, ease: "easeOut" }}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-softCream text-sm font-body">{skill.name}</span>
-                  <span className="text-xs font-opera uppercase tracking-wider text-darkCream">
+                  <span className="text-fg-muted text-sm font-body">{skill.name}</span>
+                  <span className="text-xs font-opera uppercase tracking-wider text-fg-muted">
                     {skill.level}
                   </span>
                 </div>
-                <div className="h-2 bg-darkBurgundy rounded-full overflow-hidden">
+                <div className="h-2 bg-surface-strong rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed rounded-full"
+                    className="h-full bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red rounded-full"
                   />
                 </div>
               </motion.div>

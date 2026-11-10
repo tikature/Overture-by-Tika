@@ -14,6 +14,21 @@
   --color-warm-cream: #E6D7B9;
   --color-dark-cream: #DCC8A3;
 
+  /* Semantic tokens */
+  --color-bg: var(--color-deep-abyss);
+  --color-bg-elevated: var(--color-obsidian-burgundy);
+  --color-surface: var(--color-obsidian-burgundy);
+  --color-surface-strong: var(--color-dark-burgundy);
+  --color-border: var(--color-dark-cream);
+  --color-border-strong: var(--color-warm-cream);
+  --color-fg: var(--color-cream);
+  --color-fg-muted: var(--color-soft-cream);
+  --color-fg-subtle: var(--color-warm-cream);
+  --color-accent: var(--color-burgundy);
+  --color-accent-strong: var(--color-wine-red);
+  --color-card-surface: var(--color-obsidian-burgundy);
+  --color-card-border: var(--color-dark-cream);
+
   --font-display: var(--font-playfair), serif;
   --font-opera: var(--font-cinzel), serif;
   --font-body: var(--font-jakarta), sans-serif;
@@ -70,6 +85,21 @@
     --color-card-surface: #FFFFFF;
     --color-card-border: #9B1D30;
     --color-modal-backdrop: #1B0509;
+
+    /* Semantic tokens for light theme */
+    --color-bg: var(--color-deep-abyss);
+    --color-bg-elevated: var(--color-obsidian-burgundy);
+    --color-surface: #FFFFFF;
+    --color-surface-strong: var(--color-obsidian-burgundy);
+    --color-border: var(--color-card-border);
+    --color-border-strong: var(--color-vintage-burgundy);
+    --color-fg: var(--color-cream);
+    --color-fg-muted: var(--color-soft-cream);
+    --color-fg-subtle: var(--color-warm-cream);
+    --color-accent: var(--color-burgundy);
+    --color-accent-strong: var(--color-wine-red);
+    --color-card-surface: #FFFFFF;
+    --color-card-border: var(--color-vintage-burgundy);
   }
 
   @media (prefers-reduced-motion: reduce) {

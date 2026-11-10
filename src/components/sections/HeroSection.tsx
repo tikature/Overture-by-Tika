@@ -56,13 +56,13 @@ function HeroStatChip({ label, value, liveDot = false }: HeroStatChipProps) {
   return (
     <div
       ref={ref}
-      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkBurgundy/60 border border-darkCream/30 backdrop-blur-md shadow-[0_0_15px_rgba(128,0,32,0.4)]"
+      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-strong/60 border border-border/30 backdrop-blur-md shadow-[0_0_15px_rgba(128,0,32,0.4)]"
     >
       {liveDot && (
-        <span className="w-2 h-2 rounded-full bg-wineRed shadow-[0_0_8px_#B0303C] animate-pulse" aria-hidden="true" />
+        <span className="w-2 h-2 rounded-full bg-accent-strong shadow-[0_0_8px_rgba(176,48,60,0.7)] animate-pulse" aria-hidden="true" />
       )}
-      <span className="text-[11px] uppercase tracking-[0.25em] text-ivoryCream font-opera font-bold">{label}</span>
-      <span className="font-display font-extrabold text-cream">
+      <span className="text-[11px] uppercase tracking-[0.25em] text-fg-muted font-opera font-bold">{label}</span>
+      <span className="font-display font-extrabold text-fg">
         {isNumber ? displayValue.toLocaleString() : value}
       </span>
     </div>
@@ -90,10 +90,10 @@ export default function HeroSection({ publicRepos, certificatesCount, availabili
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center min-w-0">
         {/* Hero Left Column */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cream font-display tracking-tight leading-[1.15]">
-            {t("hero.greeting")} <span className="font-opera bg-gradient-to-r from-cream via-ivoryCream to-darkCream bg-clip-text text-transparent inline-block pr-2">{siteConfig.displayName.toUpperCase()}</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-fg font-display tracking-tight leading-[1.15]">
+            {t("hero.greeting")} <span className="font-opera bg-gradient-to-r from-fg via-ivory-cream to-fg-muted bg-clip-text text-transparent inline-block pr-2">{siteConfig.displayName.toUpperCase()}</span>
           </h1>
-          <p className="text-softCream/85 text-sm sm:text-base leading-relaxed max-w-xl font-body">
+          <p className="text-fg-muted/85 text-sm sm:text-base leading-relaxed max-w-xl font-body">
             {t("hero.description")}
           </p>
           
@@ -120,7 +120,7 @@ export default function HeroSection({ publicRepos, certificatesCount, availabili
             </Button>
             
             {/* Social Badges Pill Group */}
-            <div className="flex items-center space-x-2 bg-obsidianBurgundy/90 border border-darkCream/25 rounded-full px-3 py-2 shadow-lg">
+            <div className="flex items-center space-x-2 bg-surface-strong/90 border border-border/25 rounded-full px-3 py-2 shadow-lg">
               {socialLinks.map((social, idx) =>
                 social.show && (
                   <a
@@ -129,7 +129,7 @@ export default function HeroSection({ publicRepos, certificatesCount, availabili
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-warmCream/80 hover:text-cream hover:bg-darkBurgundy/60 transition-colors"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-fg-subtle/80 hover:text-fg hover:bg-surface-strong/60 transition-colors"
                   >
                     <social.icon className="w-4 h-4" />
                   </a>

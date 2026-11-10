@@ -95,8 +95,8 @@ export default function ContactForm() {
     }
   };
 
-  const inputClass = "w-full bg-void text-ivoryCream border border-darkCream/25 placeholder-darkCream/45 focus:border-ivoryCream focus:outline-none focus:ring-1 focus:ring-ivoryCream/30 rounded-md px-4 py-3 text-sm font-body transition-colors";
-  const labelClass = "block text-xs font-opera uppercase tracking-wider text-ivoryCream mb-1.5";
+  const inputClass = "w-full bg-deep-abyss text-fg border border-border/25 placeholder-fg-muted/45 focus:border-fg focus:outline-none focus:ring-1 focus:ring-fg/30 rounded-md px-4 py-3 text-sm font-body transition-colors";
+  const labelClass = "block text-xs font-opera uppercase tracking-wider text-fg-muted mb-1.5";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
@@ -113,14 +113,14 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`${inputClass} ${errors.name ? "border-wineRed" : ""}`}
+          className={`${inputClass} ${errors.name ? "border-wine-red" : ""}`}
           placeholder="Dewi Atika Muthi"
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
           disabled={status === "submitting"}
         />
         {errors.name && (
-          <p id="name-error" className="mt-1 text-xs text-wineRed" role="alert">{errors.name}</p>
+          <p id="name-error" className="mt-1 text-xs text-wine-red" role="alert">{errors.name}</p>
         )}
       </div>
 
@@ -134,14 +134,14 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`${inputClass} ${errors.email ? "border-wineRed" : ""}`}
+          className={`${inputClass} ${errors.email ? "border-wine-red" : ""}`}
           placeholder="detikaa10@gmail.com"
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
           disabled={status === "submitting"}
         />
         {errors.email && (
-          <p id="email-error" className="mt-1 text-xs text-wineRed" role="alert">{errors.email}</p>
+          <p id="email-error" className="mt-1 text-xs text-wine-red" role="alert">{errors.email}</p>
         )}
       </div>
 
@@ -155,14 +155,14 @@ export default function ContactForm() {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`${inputClass} ${errors.subject ? "border-wineRed" : ""}`}
+          className={`${inputClass} ${errors.subject ? "border-wine-red" : ""}`}
           placeholder="Frontend Collaboration Inquiry"
           aria-invalid={errors.subject ? "true" : "false"}
           aria-describedby={errors.subject ? "subject-error" : undefined}
           disabled={status === "submitting"}
         />
         {errors.subject && (
-          <p id="subject-error" className="mt-1 text-xs text-wineRed" role="alert">{errors.subject}</p>
+          <p id="subject-error" className="mt-1 text-xs text-wine-red" role="alert">{errors.subject}</p>
         )}
       </div>
 
@@ -176,14 +176,14 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`${inputClass} ${errors.message ? "border-wineRed" : ""} resize-none`}
+          className={`${inputClass} ${errors.message ? "border-wine-red" : ""} resize-none`}
           placeholder="Describe your project, timeline, and how I can help bring your vision to the stage..."
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={errors.message ? "message-error" : undefined}
           disabled={status === "submitting"}
         />
         {errors.message && (
-          <p id="message-error" className="mt-1 text-xs text-wineRed" role="alert">{errors.message}</p>
+          <p id="message-error" className="mt-1 text-xs text-wine-red" role="alert">{errors.message}</p>
         )}
       </div>
 
@@ -191,11 +191,11 @@ export default function ContactForm() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2 p-4 bg-darkBurgundy/60 border border-cream/30 rounded-lg"
+          className="flex items-center gap-2 p-4 bg-surface-strong/60 border border-fg/30 rounded-lg"
           role="status"
         >
-          <LucideCheckCircle className="w-5 h-5 text-cream" />
-          <p className="text-cream font-body text-sm">Your dispatch has reached the stage. I will reply soon.</p>
+          <LucideCheckCircle className="w-5 h-5 text-fg" />
+          <p className="text-fg font-body text-sm">Your dispatch has reached the stage. I will reply soon.</p>
         </motion.div>
       )}
 
@@ -203,18 +203,18 @@ export default function ContactForm() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2 p-4 bg-darkBurgundy/60 border border-wineRed/30 rounded-lg"
+          className="flex items-center gap-2 p-4 bg-surface-strong/60 border border-wine-red/30 rounded-lg"
           role="alert"
         >
-          <LucideAlertCircle className="w-5 h-5 text-wineRed" />
-          <p className="text-cream font-body text-sm">{errorMessage || "The dispatch could not be delivered. Please email me directly."}</p>
+          <LucideAlertCircle className="w-5 h-5 text-wine-red" />
+          <p className="text-fg font-body text-sm">{errorMessage || "The dispatch could not be delivered. Please email me directly."}</p>
         </motion.div>
       )}
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full sm:w-auto px-8 py-3 rounded-full font-opera font-bold text-xs tracking-widest uppercase text-cream bg-gradient-to-r from-burgundy via-vintageBurgundy to-wineRed border border-darkCream/40 shadow-[0_0_20px_rgba(128,0,32,0.7)] hover:shadow-[0_0_30px_rgba(220,200,163,0.45)] hover:border-cream hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full sm:w-auto px-8 py-3 rounded-full font-opera font-bold text-xs tracking-widest uppercase text-fg bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red border border-border/40 shadow-[0_0_20px_rgba(128,0,32,0.7)] hover:shadow-[0_0_30px_rgba(220,200,163,0.45)] hover:border-fg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {status === "submitting" ? (
           <>
