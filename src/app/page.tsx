@@ -1,7 +1,6 @@
 import AmbientStage from "@/components/layout/AmbientStage";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import TechTicker from "@/components/sections/TechTicker";
 import ProductionsGrid from "@/components/sections/ProductionsGrid";
 import RepertoireSection from "@/components/sections/RepertoireSection";
 import LaurelsGrid from "@/components/sections/LaurelsGrid";
@@ -73,10 +72,7 @@ export default async function HomePage() {
           availability={siteConfig.availability}
         />
 
-{/* Technical Ensemble */}
-        <TechTicker />
-
-        {/* Productions */}
+{/* Productions */}
         <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-darkCream/20 bg-darkBurgundy/20 relative">
           <div className="max-w-7xl mx-auto">
             <ProductionsGrid projects={projectsWithMeta} />

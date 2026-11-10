@@ -155,8 +155,8 @@ export default function Navbar() {
         </div>
 
         {/* CTA (desktop) */}
-        <a href="#contact" className="hidden lg:flex whitespace-nowrap shrink-0 relative group overflow-hidden px-5 py-1.5 rounded-full text-xs font-opera font-bold tracking-wider text-fg bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red border border-border/40 shadow-[0_0_18px_rgba(128,0,32,0.7)] hover:shadow-[0_0_30px_rgba(220,200,163,0.45)] hover:border-fg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
-          <span className="relative z-10 flex items-center gap-1.5"><LucideSparkles className="w-3.5 h-3.5" />{t("hero.ctaContact")}</span>
+        <a href="#contact" className="hidden lg:flex whitespace-nowrap shrink-0 relative group overflow-hidden px-4 py-1 rounded-full text-[10px] font-opera font-bold tracking-wider text-fg bg-gradient-to-r from-burgundy via-vintage-burgundy to-wine-red border border-border/40 shadow-[0_0_18px_rgba(128,0,32,0.7)] hover:shadow-[0_0_30px_rgba(220,200,163,0.45)] hover:border-fg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <span className="relative z-10 flex items-center gap-1"><LucideSparkles className="w-3 h-3" />{t("hero.ctaContact")}</span>
         </a>
 
         {/* Mobile hamburger on far right */}
