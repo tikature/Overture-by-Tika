@@ -145,19 +145,9 @@ export default function BackstageGalleryModal({ isOpen, onClose, albums, activeA
   const categoryLabel = t(CategoryKeys[currentAlbum.category]) || currentAlbum.category;
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  // Semantic color classes that work in both themes:
-  // Panel: bg-obsidian-burgundy (dark: #24070D, light: #F7ECD4)
-  // Border: border-dark-cream (dark: #DCC8A3, light: #9B1D30)
-  // Primary text: text-soft-cream (dark: #EFE2C6, light: #1B0509)
-  // Secondary text: text-warm-cream (dark: #E6D7B9, light: #B0303C)
-  // Accent text: text-cream (dark: #FFF5E1, light: #1B0509)
-  // Button bg: bg-dark-burgundy (dark: #3B0A12, light: #EFE2C6)
-  // Button border: border-dark-cream
-  // Button hover: hover:border-cream (dark: #FFF5E1, light: #1B0509)
-
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-deep-abyss/70 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-modal-backdrop/70 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="gallery-modal-title"

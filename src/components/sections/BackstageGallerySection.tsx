@@ -89,7 +89,7 @@ export default function BackstageGallerySection() {
 
   return (
     <>
-      <section id="gallery" className="relative scroll-mt-28 py-24 border-t border-darkCream/20 bg-darkBurgundy/20">
+      <section id="gallery" className="relative scroll-mt-28 py-24 border-t border-dark-cream/20 bg-dark-burgundy/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow={t("gallery.eyebrow")}
@@ -105,7 +105,7 @@ export default function BackstageGallerySection() {
           </SectionHeading>
 
           {!hasAlbums && isDev && (
-            <div className="border-2 border-dashed border-cream rounded-lg p-8 text-center text-softCream/70">
+            <div className="border-2 border-dashed border-cream rounded-lg p-8 text-center text-soft-cream/70">
               {t("gallery.emptyDev")}
             </div>
           )}
@@ -121,9 +121,9 @@ export default function BackstageGallerySection() {
                   <li
                     key={album.slug}
                     className={`
-                      group relative flex h-full flex-col overflow-hidden rounded-2xl border border-darkCream/20 bg-[#2A0B12]/60 backdrop-blur text-left
-                      transition duration-300 hover:-translate-y-1 hover:border-ivoryCream/50
-                      focus-visible:outline focus-visible:outline-2 focus-visible:outline-ivoryCream
+                      group relative flex h-full flex-col overflow-hidden rounded-2xl border border-dark-cream/20 bg-card-surface/60 backdrop-blur text-left
+                      transition duration-300 hover:-translate-y-1 hover:border-ivory-cream/50
+                      focus-visible:outline focus-visible:outline-2 focus-visible:outline-ivory-cream
                       ${isFeatured ? "md:col-span-2 lg:col-span-2 lg:row-span-2" : ""}
                     `}
                   >
@@ -159,12 +159,12 @@ export default function BackstageGallerySection() {
                         <h3 className="font-display text-lg font-extrabold text-cream mb-2 line-clamp-2">
                           {locale === "id" && album.title_id ? album.title_id : album.title}
                         </h3>
-                        <p className="text-sm text-softCream/85 line-clamp-2 flex-1 mb-4">
+                        <p className="text-sm text-soft-cream/85 line-clamp-2 flex-1 mb-4">
                           {locale === "id" && album.summary_id ? album.summary_id : album.summary}
                         </p>
                         <div className="flex flex-wrap items-center justify-between gap-3 text-[11px] font-opera uppercase tracking-wider">
-                          <span className="text-warmCream/70">{normalizePeriod(album.period)}</span>
-                          <span className="px-2 py-0.5 rounded-full bg-darkBurgundy/60 border border-darkCream/30 text-ivoryCream/70">
+                          <span className="text-warm-cream/70">{normalizePeriod(album.period)}</span>
+                          <span className="px-2 py-0.5 rounded-full bg-dark-burgundy/60 border border-dark-cream/30 text-ivory-cream/70">
                             {photoCount} {t("gallery.photos")}
                           </span>
                         </div>
