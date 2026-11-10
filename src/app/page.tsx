@@ -10,6 +10,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import SpotlightSection from "@/components/sections/SpotlightSection";
 import RehearsalLogSection from "@/components/sections/RehearsalLogSection";
+import BackstageGallerySection from "@/components/sections/BackstageGallerySection";
 import { getProjects } from "@/lib/projects-source";
 import { certificates } from "@/data/certificates";
 import { siteConfig } from "@/data/site";
@@ -91,11 +92,14 @@ export default async function HomePage() {
         {/* Repertoire + Experience */}
         <RepertoireSection />
 
-        {/* The Rehearsal Log */}
-        <RehearsalLogSection />
+{/* The Rehearsal Log */}
+         <RehearsalLogSection />
 
-        {/* Laurels */}
-        <LaurelsGrid />
+         {/* Backstage Gallery */}
+         <BackstageGallerySection />
+
+         {/* Laurels */}
+         <LaurelsGrid />
 
         {/* Contact */}
         <ContactSection />

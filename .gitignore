@@ -10,5 +10,6 @@ next-env.d.ts
 .DS_Store
 npm-debug.log*
 private
+gallery-src
 PROMPT.md
 README.md

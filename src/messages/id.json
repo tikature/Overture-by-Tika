@@ -108,6 +108,26 @@
     "home": "Kembali ke Overture",
     "productions": "Jelajahi Produksi"
   },
+  "gallery": {
+    "eyebrow": "DOKUMENTASI",
+    "title": { "before": "Galeri ", "accent": "Panggung Belakang" },
+    "subtitle": "Bukti di balik pekerjaan.",
+    "photos": "foto",
+    "close": "Tutup galeri",
+    "prev": "Foto sebelumnya",
+    "next": "Foto selanjutnya",
+    "counter": "{current} / {total}",
+    "caption": "Keterangan",
+    "category": {
+      "project": "Proyek",
+      "teaching": "Mengajar",
+      "event": "Acara",
+      "organization": "Organisasi",
+      "internship": "Magang",
+      "experience": "Pengalaman"
+    },
+    "emptyDev": "Galeri kosong: tambahkan album ke gallery-src dan jalankan `pnpm gallery`"
+  },
   "language": { "label": "Bahasa", "en": "English", "id": "Indonesia" },
   "theme": { "label": "Tema", "dark": "Dark Burgundy", "light": "Salon Cream" },
   "livePreview": "Pratinjau Langsung",

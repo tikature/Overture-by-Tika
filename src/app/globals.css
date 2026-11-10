@@ -46,6 +46,13 @@
     @apply bg-deep-abyss text-soft-cream font-body;
   }
 
+  /* Modal open state - hide navbar and ambient stage */
+  body[data-modal-open="true"] header,
+  body[data-modal-open="true"] [data-purpose="ambient-stage"] {
+    pointer-events: none;
+    opacity: 0;
+  }
+
   .light-theme {
     --color-deep-abyss: #FFF5E1;
     --color-soft-cream: #1B0509;

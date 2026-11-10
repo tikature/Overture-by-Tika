@@ -108,6 +108,26 @@
     "home": "Return to Overture",
     "productions": "Browse Productions"
   },
+"gallery": {
+    "eyebrow": "DOCUMENTATION",
+    "title": { "before": "Backstage ", "accent": "Gallery" },
+    "subtitle": "Proof behind the work.",
+    "photos": "photos",
+    "close": "Close gallery",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "counter": "{current} / {total}",
+    "caption": "Caption",
+    "category": {
+      "project": "Project",
+      "teaching": "Teaching",
+      "event": "Event",
+      "organization": "Organization",
+      "internship": "Internship",
+      "experience": "Experience"
+    },
+    "emptyDev": "Gallery is empty: add albums to gallery-src and run `pnpm gallery`"
+  },
   "language": { "label": "Language", "en": "English", "id": "Indonesian" },
   "theme": { "label": "Theme", "dark": "Dark Burgundy", "light": "Salon Cream" },
   "livePreview": "Live Preview",

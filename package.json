@@ -9,7 +9,9 @@
     "lint": "eslint src --config eslint.config.mjs",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "previews": "tsx scripts/generate-previews.ts"
+    "previews": "tsx scripts/generate-previews.ts",
+    "gallery": "tsx scripts/build-gallery.ts",
+    "i18n:check": "tsx scripts/check-i18n.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.1",
@@ -34,6 +36,7 @@
     "eslint-config-next": "16.4.4",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "sharp": "^0.33.5",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5",

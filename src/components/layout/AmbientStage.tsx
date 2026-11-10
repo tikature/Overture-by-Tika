@@ -51,7 +51,7 @@ export default function AmbientStage() {
   ];
 
   return (
-    <div aria-hidden="true" className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div aria-hidden="true" data-purpose="ambient-stage" className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Glows */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[650px] bg-vintageBurgundy/15 rounded-full blur-[180px] animate-spotlight-pulse" />
       <div className="absolute top-1/3 -left-36 w-[550px] h-[550px] bg-oxblood/35 rounded-full blur-[160px]" />

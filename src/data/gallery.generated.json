@@ -1,0 +1,609 @@
+{
+  "albums": [
+    {
+      "title": "Validly",
+      "category": "project",
+      "period": "2026",
+      "summary": "Copyright-registered certificate platform, delivered with Extreme Programming and accepted via a client-signed UAT.",
+      "description": "Validly is a multi-tenant platform for certificate generation with QR verification, built as my undergraduate thesis for CV. Oemah Website Purwokerto. We worked with Extreme Programming in close collaboration with the client, negotiating requirements continuously, and the result was accepted through a User Acceptance Test signed off by the client. The computer program is officially registered as copyright (Reg. No. 001273151, June 2026).",
+      "role": "Architected and developed the platform",
+      "tags": [
+        "Laravel",
+        "MySQL",
+        "Extreme Programming",
+        "UAT",
+        "Copyright"
+      ],
+      "link": {
+        "label": "Read the case study",
+        "href": "/productions/validly"
+      },
+      "frameBg": "white",
+      "featured": true,
+      "photos": [
+        {
+          "src": "/images/gallery/validly/validly-1.webp",
+          "thumb": "/images/gallery/validly/validly-1.thumb.webp",
+          "width": 1358,
+          "height": 1920,
+          "alt": "Copyright registration certificate (HKI) for Validly",
+          "caption": "Copyright Registration Certificate (HKI)"
+        },
+        {
+          "src": "/images/gallery/validly/validly-2.webp",
+          "thumb": "/images/gallery/validly/validly-2.thumb.webp",
+          "width": 1920,
+          "height": 1404,
+          "alt": "Validly landing page interface with dark blue theme",
+          "caption": "Validly Landing Page"
+        },
+        {
+          "src": "/images/gallery/validly/validly-3.webp",
+          "thumb": "/images/gallery/validly/validly-3.thumb.webp",
+          "width": 1920,
+          "height": 929,
+          "alt": "Validly dashboard showing mass certificate generation progress",
+          "caption": "Certificate Generation Dashboard"
+        }
+      ],
+      "title_id": "Validly",
+      "summary_id": "Copyright-registered certificate platform, delivered with Extreme Programming and accepted via a client-signed UAT.",
+      "description_id": "Validly is a multi-tenant platform for certificate generation with QR verification, built as my undergraduate thesis for CV. Oemah Website Purwokerto. We worked with Extreme Programming in close collaboration with the client, negotiating requirements continuously, and the result was accepted through a User Acceptance Test signed off by the client. The computer program is officially registered as copyright (Reg. No. 001273151, June 2026).",
+      "role_id": "Architected and developed the platform"
+    },
+    {
+      "title": "7th Dies Natalis of Software Engineering",
+      "category": "organization",
+      "period": "2023",
+      "summary": "Organized the 7th anniversary events for the Software Engineering program, featuring competitions, a traditional ceremony, and a national seminar.",
+      "description": "Served as the Event Division Staff (Staff Divisi Acara) for the 7th Dies Natalis (Anniversary) of the Software Engineering study program in 2023. The celebration featured a series of events, starting with 'Tumpengan' (a traditional thanksgiving ceremony) and PELOSE (Pekan Lomba SE), which included various inter-class and inter-batch competitions. The event series concluded with a National Seminar. I was responsible for coordinating the event flow, ensuring all activities ran smoothly from the competitions to the final seminar.",
+      "role": "Event Division Staff",
+      "tags": [
+        "Event Management",
+        "Program Anniversary",
+        "Event Coordination",
+        "Seminar"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/dies-natalis-7"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/diesnat/diesnat-1.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-1.thumb.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Full committee photo after the conclusion of all 7th Dies Natalis events",
+          "caption": "Full committee photo after all events concluded"
+        },
+        {
+          "src": "/images/gallery/diesnat/diesnat-2.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-2.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Tumpeng cutting ceremony by the Head of the Software Engineering Study Program, Ariq Cahya Wardhana, S.Kom., M.Kom.",
+          "caption": "Tumpeng cutting ceremony by Head of SE Study Program, Ariq Cahya Wardhana, S.Kom., M.Kom."
+        },
+        {
+          "src": "/images/gallery/diesnat/diesnat-3.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-3.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Full committee photo after the Tumpengan and PELOSE events",
+          "caption": "The committee team after Tumpengan and PELOSE"
+        },
+        {
+          "src": "/images/gallery/diesnat/diesnat-4.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-4.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Photo with the Treasurer and the Steering Committee",
+          "caption": "With the Treasurer and Steering Committee"
+        },
+        {
+          "src": "/images/gallery/diesnat/diesnat-5.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-5.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "Event Division Staff certificate for PELOSE",
+          "caption": "Event Division Staff certificate for PELOSE"
+        },
+        {
+          "src": "/images/gallery/diesnat/diesnat-6.webp",
+          "thumb": "/images/gallery/diesnat/diesnat-6.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "Event Division Staff certificate for the 7th Dies Natalis",
+          "caption": "Certificate of appreciation for the 7th Dies Natalis"
+        }
+      ],
+      "title_id": "7th Dies Natalis of Software Engineering",
+      "summary_id": "Organized the 7th anniversary events for the Software Engineering program, featuring competitions, a traditional ceremony, and a national seminar.",
+      "description_id": "Served as the Event Division Staff (Staff Divisi Acara) for the 7th Dies Natalis (Anniversary) of the Software Engineering study program in 2023. The celebration featured a series of events, starting with 'Tumpengan' (a traditional thanksgiving ceremony) and PELOSE (Pekan Lomba SE), which included various inter-class and inter-batch competitions. The event series concluded with a National Seminar. I was responsible for coordinating the event flow, ensuring all activities ran smoothly from the competitions to the final seminar.",
+      "role_id": "Event Division Staff"
+    },
+    {
+      "title": "Intern Staff of HMSE External & Social",
+      "category": "organization",
+      "period": "",
+      "summary": "Focused on building external relations and driving community initiatives as an Intern Staff for the External and Social Department.",
+      "description": "Upon joining HMSE (Himpunan Mahasiswa Software Engineering) at Telkom University as an Intern Staff, I was specifically assigned to the External and Social Department. My role heavily focused on building external relations and driving social initiatives for the association. I facilitated inter-association relations as a Master of Ceremony, organized comparative studies with other universities like IT Telkom Surabaya, managed Ramadan social service programs in collaboration with Dompet Dhuafa, and coordinated collaborative dialogue sessions with student executive boards.",
+      "role": "Intern Staff - External and Social Department",
+      "tags": [
+        "External Relations",
+        "Event Organizing",
+        "Community Service",
+        "Master of Ceremony"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/hmse-intern-eksos"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-1.webp",
+          "thumb": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-1.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "HIMA intern farewell event",
+          "caption": "Our HIMA intern farewell event"
+        },
+        {
+          "src": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-2.webp",
+          "thumb": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-2.thumb.webp",
+          "width": 1635,
+          "height": 1920,
+          "alt": "Online comparative study with HIMSE IT Telkom Surabaya",
+          "caption": "Comparative study with HIMSE IT Telkom Surabaya"
+        },
+        {
+          "src": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-3.webp",
+          "thumb": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-3.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Ramadan social service activities",
+          "caption": "Ramadan social service event with Dompet Dhuafa and other associations"
+        },
+        {
+          "src": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-4.webp",
+          "thumb": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-4.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Casual talk event with BEM ITTP",
+          "caption": "Casual discussion session with BEM ITTP"
+        },
+        {
+          "src": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-5.webp",
+          "thumb": "/images/gallery/intern-hmse-eksos/intern-hmse-eksos-5.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "HMSE Intern Staff certificate of appreciation",
+          "caption": "Intern program completion certificate"
+        }
+      ],
+      "title_id": "Intern Staff of HMSE External & Social",
+      "summary_id": "Focused on building external relations and driving community initiatives as an Intern Staff for the External and Social Department.",
+      "description_id": "Upon joining HMSE (Himpunan Mahasiswa Software Engineering) at Telkom University as an Intern Staff, I was specifically assigned to the External and Social Department. My role heavily focused on building external relations and driving social initiatives for the association. I facilitated inter-association relations as a Master of Ceremony, organized comparative studies with other universities like IT Telkom Surabaya, managed Ramadan social service programs in collaboration with Dompet Dhuafa, and coordinated collaborative dialogue sessions with student executive boards.",
+      "role_id": "Intern Staff - External and Social Department"
+    },
+    {
+      "title": "Organizing Committee Chair - SEIRAMA",
+      "category": "organization",
+      "period": "2024",
+      "summary": "Led the organizing committee for SEIRAMA 2024, an Iftar gathering connecting Software Engineering students, lecturers, and an orphanage.",
+      "description": "Served as the Organizing Committee Chair (Ketua Pelaksana) for SEIRAMA (Software Engineering Berbuka Bersama) in 2024. This community event brought together Software Engineering students, faculty members, and children from the Harapan Mulia Orphanage for a meaningful Iftar gathering. My responsibilities included leading the committee, coordinating event logistics, delivering the opening speech, and ensuring the smooth execution of the program, which also featured a religious sermon (kultum) by Ustadz Kharisma Panji Krisna, S.T.",
+      "role": "Organizing Committee Chair (Ketua Pelaksana)",
+      "tags": [
+        "Event Management",
+        "Community Service",
+        "Leadership",
+        "Public Speaking"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/seirama-2024"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/bukber/bukber-1.webp",
+          "thumb": "/images/gallery/bukber/bukber-1.thumb.webp",
+          "width": 1536,
+          "height": 1920,
+          "alt": "Delivering the opening speech as the Organizing Committee Chair for SEIRAMA 2024",
+          "caption": "Delivering the opening speech as the Organizing Committee Chair"
+        },
+        {
+          "src": "/images/gallery/bukber/bukber-2.webp",
+          "thumb": "/images/gallery/bukber/bukber-2.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Group photo with children from Harapan Mulia Orphanage and Software Engineering lecturers",
+          "caption": "With children from Harapan Mulia Orphanage and SE lecturers"
+        },
+        {
+          "src": "/images/gallery/bukber/bukber-3.webp",
+          "thumb": "/images/gallery/bukber/bukber-3.thumb.webp",
+          "width": 1536,
+          "height": 1920,
+          "alt": "Ustadz Kharisma Panji Krisna, S.T. delivering the religious sermon or kultum",
+          "caption": "Religious sermon (kultum) by Ustadz Kharisma Panji Krisna, S.T."
+        },
+        {
+          "src": "/images/gallery/bukber/bukber-4.webp",
+          "thumb": "/images/gallery/bukber/bukber-4.thumb.webp",
+          "width": 1920,
+          "height": 1357,
+          "alt": "Certificate of appreciation for serving as the Organizing Committee Chair of SEIRAMA 2024",
+          "caption": "Organizing Committee Chair certificate"
+        }
+      ],
+      "title_id": "Organizing Committee Chair - SEIRAMA",
+      "summary_id": "Led the organizing committee for SEIRAMA 2024, an Iftar gathering connecting Software Engineering students, lecturers, and an orphanage.",
+      "description_id": "Served as the Organizing Committee Chair (Ketua Pelaksana) for SEIRAMA (Software Engineering Berbuka Bersama) in 2024. This community event brought together Software Engineering students, faculty members, and children from the Harapan Mulia Orphanage for a meaningful Iftar gathering. My responsibilities included leading the committee, coordinating event logistics, delivering the opening speech, and ensuring the smooth execution of the program, which also featured a religious sermon (kultum) by Ustadz Kharisma Panji Krisna, S.T.",
+      "role_id": "Organizing Committee Chair (Ketua Pelaksana)"
+    },
+    {
+      "title": "Organizing Committee Chair - SELP 3.0",
+      "category": "organization",
+      "period": "",
+      "summary": "Led the organizing committee for the Software Engineering Leadership Project 3.0, facilitating a leadership and bonding camp for the 2023 freshman class.",
+      "description": "Served as the Organizing Committee Chair (Ketua Pelaksana) for the Software Engineering Leadership Project 3.0, specifically overseeing the Basic Leadership Training (LDK) and Familiarity Night (Makrab) for the 2023 freshman batch. Held at Villa Laris Baturraden, the event was designed to foster leadership skills, teamwork, and strong internal bonds among the new students. My responsibilities included managing the entire event committee, directing the execution timeline from planning to completion, delivering the opening remarks, and coordinating closely with university stakeholders, including the Head of the Study Program representatives.",
+      "role": "Organizing Committee Chair (Ketua Pelaksana)",
+      "tags": [
+        "Event Management",
+        "Leadership",
+        "Public Speaking",
+        "Team Coordination"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/selp-3"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/selp/selp-1.webp",
+          "thumb": "/images/gallery/selp/selp-1.thumb.webp",
+          "width": 1920,
+          "height": 1078,
+          "alt": "Delivering the opening speech as the Organizing Committee Chair for SELP 3.0",
+          "caption": "Delivering the opening speech as the Organizing Committee Chair"
+        },
+        {
+          "src": "/images/gallery/selp/selp-2.webp",
+          "thumb": "/images/gallery/selp/selp-2.thumb.webp",
+          "width": 1920,
+          "height": 1078,
+          "alt": "Photo with the Head of Study Program representative and 2023 student representatives",
+          "caption": "With the Study Program representative and 2023 freshman representatives"
+        },
+        {
+          "src": "/images/gallery/selp/selp-3.webp",
+          "thumb": "/images/gallery/selp/selp-3.thumb.webp",
+          "width": 1920,
+          "height": 1078,
+          "alt": "Makrab gathering activities at Villa Laris Baturraden",
+          "caption": "Makrab activities at Villa Laris Baturraden"
+        },
+        {
+          "src": "/images/gallery/selp/selp-4.webp",
+          "thumb": "/images/gallery/selp/selp-4.thumb.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Certificate of appreciation for serving as the Organizing Committee Chair",
+          "caption": "Organizing Committee Chair certificate"
+        }
+      ],
+      "title_id": "Organizing Committee Chair - SELP 3.0",
+      "summary_id": "Led the organizing committee for the Software Engineering Leadership Project 3.0, facilitating a leadership and bonding camp for the 2023 freshman class.",
+      "description_id": "Served as the Organizing Committee Chair (Ketua Pelaksana) for the Software Engineering Leadership Project 3.0, specifically overseeing the Basic Leadership Training (LDK) and Familiarity Night (Makrab) for the 2023 freshman batch. Held at Villa Laris Baturraden, the event was designed to foster leadership skills, teamwork, and strong internal bonds among the new students. My responsibilities included managing the entire event committee, directing the execution timeline from planning to completion, delivering the opening remarks, and coordinating closely with university stakeholders, including the Head of the Study Program representatives.",
+      "role_id": "Organizing Committee Chair (Ketua Pelaksana)"
+    },
+    {
+      "title": "Staff of Member Empowerment (PEMDA)",
+      "category": "organization",
+      "period": "",
+      "summary": "Focused on internal capacity building, member evaluation, and fostering a cohesive organizational culture within HMSE.",
+      "description": "Transitioning from an intern role, I officially became a Staff member of the Member Empowerment (PEMDA) Department at HMSE. My primary responsibility was to oversee internal capacity building and maintain a strong, cohesive environment for all members. This involved monitoring member performance, facilitating internal bonding events, and representing the association in comparative studies with other universities to exchange organizational best practices. At the end of the term, I also took part in presenting our department's work results and performance metrics during the official accountability session.",
+      "role": "Staff - Member Empowerment (PEMDA) Department",
+      "tags": [
+        "Capacity Building",
+        "Internal Development",
+        "Performance Evaluation",
+        "Team Management"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/hmse-staff-pemda"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-1.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-1.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Official handover of position ceremony at HMSE",
+          "caption": "HMSE official handover of position ceremony"
+        },
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-2.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-2.thumb.webp",
+          "width": 1920,
+          "height": 1078,
+          "alt": "HMSE internal department event",
+          "caption": "Participating in an HMSE internal event"
+        },
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-3.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-3.thumb.webp",
+          "width": 1920,
+          "height": 1536,
+          "alt": "Inauguration and handover event session",
+          "caption": "Inauguration and official handover session"
+        },
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-4.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-4.thumb.webp",
+          "width": 1920,
+          "height": 1536,
+          "alt": "Comparative study at UNUGHA Cilacap with HIMATIF",
+          "caption": "Attending a comparative study at UNUGHA Cilacap with HIMATIF"
+        },
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-5.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-5.thumb.webp",
+          "width": 1080,
+          "height": 1920,
+          "alt": "Presenting work results during the accountability session",
+          "caption": "Presenting department work results at the accountability session"
+        },
+        {
+          "src": "/images/gallery/hmse-pemda/hmse-pemda-6.webp",
+          "thumb": "/images/gallery/hmse-pemda/hmse-pemda-6.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Member Empowerment (PEMDA) department team photo",
+          "caption": "The Member Empowerment (PEMDA) Department team"
+        }
+      ],
+      "title_id": "Staff of Member Empowerment (PEMDA)",
+      "summary_id": "Focused on internal capacity building, member evaluation, and fostering a cohesive organizational culture within HMSE.",
+      "description_id": "Transitioning from an intern role, I officially became a Staff member of the Member Empowerment (PEMDA) Department at HMSE. My primary responsibility was to oversee internal capacity building and maintain a strong, cohesive environment for all members. This involved monitoring member performance, facilitating internal bonding events, and representing the association in comparative studies with other universities to exchange organizational best practices. At the end of the term, I also took part in presenting our department's work results and performance metrics during the official accountability session.",
+      "role_id": "Staff - Member Empowerment (PEMDA) Department"
+    },
+    {
+      "title": "Teaching Assistant - Operating Systems",
+      "category": "experience",
+      "period": "Feb 2026 - Jul 2026",
+      "summary": "Guided over 140 students through 13 modules on operating system fundamentals and advanced Linux operations at the Informatics Laboratory.",
+      "description": "Served as a Teaching Assistant (Asisten Praktikum) for the Operating Systems course at the Informatics Laboratory (Programming Lab) of Telkom University Purwokerto. I facilitated hands-on practical sessions for over 140 students, guiding them through 13 comprehensive modules. The curriculum deeply covered operating system fundamentals, process scheduling, memory management, and advanced Linux terminal operations. My responsibilities included delivering technical demonstrations on the command-line interface, assisting students with hands-on system exercises, and evaluating their practical understanding of OS environments.",
+      "role": "Teaching Assistant",
+      "tags": [
+        "Operating Systems",
+        "Linux",
+        "Teaching",
+        "Mentoring"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/teaching-assistant-os"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/asprak-so/asprak-so-1.webp",
+          "thumb": "/images/gallery/asprak-so/asprak-so-1.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "Operating Systems Teaching Assistant Certificate of Appreciation",
+          "caption": "Teaching Assistant Certificate for Operating Systems"
+        },
+        {
+          "src": "/images/gallery/asprak-so/asprak-so-2.webp",
+          "thumb": "/images/gallery/asprak-so/asprak-so-2.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Guiding students during an Operating Systems practical session in the laboratory",
+          "caption": "Teaching and learning session in the Programming Laboratory"
+        },
+        {
+          "src": "/images/gallery/asprak-so/asprak-so-3.webp",
+          "thumb": "/images/gallery/asprak-so/asprak-so-3.thumb.webp",
+          "width": 1440,
+          "height": 1920,
+          "alt": "TV monitor displaying basic to advanced Linux terminal operations",
+          "caption": "Displaying Linux terminal materials on the lab monitor"
+        },
+        {
+          "src": "/images/gallery/asprak-so/asprak-so-4.webp",
+          "thumb": "/images/gallery/asprak-so/asprak-so-4.thumb.webp",
+          "width": 1536,
+          "height": 1920,
+          "alt": "Self-portrait while on duty as an Operating Systems Teaching Assistant",
+          "caption": "On duty at the Informatics Laboratory"
+        }
+      ],
+      "title_id": "Teaching Assistant - Operating Systems",
+      "summary_id": "Guided over 140 students through 13 modules on operating system fundamentals and advanced Linux operations at the Informatics Laboratory.",
+      "description_id": "Served as a Teaching Assistant (Asisten Praktikum) for the Operating Systems course at the Informatics Laboratory (Programming Lab) of Telkom University Purwokerto. I facilitated hands-on practical sessions for over 140 students, guiding them through 13 comprehensive modules. The curriculum deeply covered operating system fundamentals, process scheduling, memory management, and advanced Linux terminal operations. My responsibilities included delivering technical demonstrations on the command-line interface, assisting students with hands-on system exercises, and evaluating their practical understanding of OS environments.",
+      "role_id": "Teaching Assistant"
+    },
+    {
+      "title": "Teaching Assistant - Web Design & Programming",
+      "category": "experience",
+      "period": "2025 - 2026",
+      "summary": "Guided students through 12 foundational and framework modules in web development, concluding with comprehensive final project evaluations.",
+      "description": "Selected as a Teaching Assistant (Asisten Praktikum) for the Web Design and Programming course at the Informatics Laboratory of Telkom University Purwokerto. I facilitated hands-on practical sessions, guiding students through 12 comprehensive modules covering foundational web programming concepts and framework-based development utilizing Laravel. My responsibilities included delivering technical material, assisting students with code debugging from the TA desk, and conducting thorough evaluations of their final projects (Tugas Besar) to ensure a solid grasp of web application architecture.",
+      "role": "Teaching Assistant",
+      "tags": [
+        "Web Development",
+        "Teaching",
+        "Laravel",
+        "Mentoring"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/teaching-assistant-web"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-1.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-1.thumb.webp",
+          "width": 1535,
+          "height": 1920,
+          "alt": "Informatics Laboratory announcement and feedback session",
+          "caption": "Informatics Lab announcement and practical feedback session"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-2.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-2.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Guiding students during a Web Programming practical session in the laboratory",
+          "caption": "Web programming practical session with students"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-3.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-3.thumb.webp",
+          "width": 1440,
+          "height": 1920,
+          "alt": "TV monitor in the lab displaying Laravel framework coding materials",
+          "caption": "Displaying Laravel coding materials on the lab monitor"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-4.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-4.thumb.webp",
+          "width": 1920,
+          "height": 1440,
+          "alt": "View of the laboratory session taken from the Teaching Assistant's desk",
+          "caption": "The lab session viewed from the TA's desk"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-5.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-5.thumb.webp",
+          "width": 1440,
+          "height": 1920,
+          "alt": "Self-portrait while on duty at the Informatics Laboratory",
+          "caption": "On duty at the Informatics Laboratory"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-6.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-6.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "Teaching Assistant Certificate of Appreciation for Web Design and Programming",
+          "caption": "Teaching Assistant Certificate"
+        },
+        {
+          "src": "/images/gallery/asprak-web/asprak-web-7.webp",
+          "thumb": "/images/gallery/asprak-web/asprak-web-7.thumb.webp",
+          "width": 1920,
+          "height": 1358,
+          "alt": "Second Teaching Assistant Certificate of Appreciation for Web Design and Programming",
+          "caption": "Teaching Assistant Certificate"
+        }
+      ],
+      "title_id": "Teaching Assistant - Web Design & Programming",
+      "summary_id": "Guided students through 12 foundational and framework modules in web development, concluding with comprehensive final project evaluations.",
+      "description_id": "Selected as a Teaching Assistant (Asisten Praktikum) for the Web Design and Programming course at the Informatics Laboratory of Telkom University Purwokerto. I facilitated hands-on practical sessions, guiding students through 12 comprehensive modules covering foundational web programming concepts and framework-based development utilizing Laravel. My responsibilities included delivering technical material, assisting students with code debugging from the TA desk, and conducting thorough evaluations of their final projects (Tugas Besar) to ensure a solid grasp of web application architecture.",
+      "role_id": "Teaching Assistant"
+    },
+    {
+      "title": "Vocational Intern - Diskominfo South Kalimantan",
+      "category": "experience",
+      "period": "Jan 2021 - Mar 2021",
+      "summary": "Completed a 3-month vocational field internship (PKL) at the Department of Communication and Informatics of South Kalimantan Province.",
+      "description": "As part of my vocational high school (SMK) curriculum, I completed a 3-month field internship (Praktek Kerja Lapangan / PKL) at the Department of Communication and Informatics (Diskominfo) of South Kalimantan Province. Running from January 6 to March 31, 2021, this internship provided foundational exposure to government IT infrastructure and services, equipping me with early professional experience in technology administration and support within the public sector.",
+      "role": "Vocational Intern",
+      "tags": [
+        "Vocational Internship",
+        "Public Sector IT",
+        "IT Support",
+        "Diskominfo"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/pkl-diskominfo"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/pkl/pkl-dikominfo.webp",
+          "thumb": "/images/gallery/pkl/pkl-dikominfo.thumb.webp",
+          "width": 1920,
+          "height": 1334,
+          "alt": "Vocational Internship (PKL) certificate of completion from Diskominfo South Kalimantan Province",
+          "caption": "PKL Certificate from Diskominfo South Kalimantan"
+        }
+      ],
+      "title_id": "Vocational Intern - Diskominfo South Kalimantan",
+      "summary_id": "Completed a 3-month vocational field internship (PKL) at the Department of Communication and Informatics of South Kalimantan Province.",
+      "description_id": "As part of my vocational high school (SMK) curriculum, I completed a 3-month field internship (Praktek Kerja Lapangan / PKL) at the Department of Communication and Informatics (Diskominfo) of South Kalimantan Province. Running from January 6 to March 31, 2021, this internship provided foundational exposure to government IT infrastructure and services, equipping me with early professional experience in technology administration and support within the public sector.",
+      "role_id": "Vocational Intern"
+    },
+    {
+      "title": "Web Developer Intern & Team Lead",
+      "category": "experience",
+      "period": "2025",
+      "summary": "Led the web development team during a university-mandated internship at Oemah Website, concluding with an 'Excellent' (Amat Baik) evaluation.",
+      "description": "Completed a university-mandated internship (Kerja Praktik) at CV Oemah Website Teknologi (Oemah Website Purwokerto) serving as the Web Developer Team Lead. I directed the development team in engineering a provincial government IT infrastructure security audit system for Diskominfo, utilizing Laravel and role-based access control. The program commenced with a comprehensive onboarding session led directly by the CEO, Mr. Agus Darmawan. At the end of the term, I successfully completed the program and received an 'Excellent' (Amat Baik) performance evaluation.",
+      "role": "Web Developer Intern - Team Lead",
+      "tags": [
+        "Web Development",
+        "Team Leadership",
+        "Laravel",
+        "Internship"
+      ],
+      "link": {
+        "label": "View details",
+        "href": "/experiences/oemah-website-intern"
+      },
+      "frameBg": "white",
+      "featured": false,
+      "photos": [
+        {
+          "src": "/images/gallery/kp/kp-1.webp",
+          "thumb": "/images/gallery/kp/kp-1.thumb.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Internship completion certificate from Oemah Website with an Amat Baik (Excellent) grade",
+          "caption": "Internship Certificate with 'Amat Baik' (Excellent) evaluation"
+        },
+        {
+          "src": "/images/gallery/kp/kp-2.webp",
+          "thumb": "/images/gallery/kp/kp-2.thumb.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Online onboarding session via Google Meet with CEO Agus Darmawan and the internship team",
+          "caption": "Onboarding session with CEO Agus Darmawan and the intern team"
+        },
+        {
+          "src": "/images/gallery/kp/kp-3.webp",
+          "thumb": "/images/gallery/kp/kp-3.thumb.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Company presentation slide during the online onboarding session",
+          "caption": "Company overview presentation during the onboarding"
+        }
+      ],
+      "title_id": "Web Developer Intern & Team Lead",
+      "summary_id": "Led the web development team during a university-mandated internship at Oemah Website, concluding with an 'Excellent' (Amat Baik) evaluation.",
+      "description_id": "Completed a university-mandated internship (Kerja Praktik) at CV Oemah Website Teknologi (Oemah Website Purwokerto) serving as the Web Developer Team Lead. I directed the development team in engineering a provincial government IT infrastructure security audit system for Diskominfo, utilizing Laravel and role-based access control. The program commenced with a comprehensive onboarding session led directly by the CEO, Mr. Agus Darmawan. At the end of the term, I successfully completed the program and received an 'Excellent' (Amat Baik) performance evaluation.",
+      "role_id": "Web Developer Intern - Team Lead"
+    }
+  ]
+}
