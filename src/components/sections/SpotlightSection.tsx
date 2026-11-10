@@ -7,8 +7,8 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 export default function SpotlightSection() {
-  const { t } = useI18n();
-  const validly = projects.find((p) => p.slug === "validly");
+  const { t, locale } = useI18n();
+  const validly = projects.find((p) => p.slug === "thevalidly");
 
   return (
     <section id="spotlight" className="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-border/20 bg-bg-elevated/20">
@@ -26,9 +26,9 @@ export default function SpotlightSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Featured Card: Validly - spans 2 cols on lg */}
-          <article className="lg:col-span-2 relative bg-surface border border-border/20 rounded-3xl p-8 opera-border-hover overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Featured Card: Validly - full height on lg */}
+          <article className="relative bg-surface border border-border/20 rounded-3xl p-8 opera-border-hover overflow-hidden lg:h-full">
             <div className="mb-4">
               <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-strong/60 border border-border/30 backdrop-blur text-[10px] font-opera font-bold uppercase tracking-wider text-fg-muted">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-strong" />
@@ -39,9 +39,35 @@ export default function SpotlightSection() {
             <h3 className="text-2xl sm:text-3xl font-display font-bold text-fg mb-3">
               {validly?.title}
             </h3>
-            <p className="text-fg-muted/80 text-sm leading-relaxed mb-6">
-              {validly?.tagline}
-            </p>
+
+            {/* Full description */}
+            {validly?.description && (
+              <p className="text-fg-muted/80 text-sm leading-relaxed mb-6">
+                {locale === "id" && validly?.description_id ? validly.description_id : validly.description}
+              </p>
+            )}
+
+            {/* Problem & Solution */}
+            {(validly?.problem || validly?.solution) && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {validly?.problem && (
+                  <div className="p-4 bg-surface-strong/60 border border-border/30 rounded-xl">
+                    <h4 className="text-xs font-opera uppercase tracking-wider text-fg-muted mb-2">{t("spotlight.problem") || "The Challenge"}</h4>
+                    <p className="text-sm text-fg-muted/80 leading-relaxed">
+                      {locale === "id" && validly?.problem_id ? validly.problem_id : validly.problem}
+                    </p>
+                  </div>
+                )}
+                {validly?.solution && (
+                  <div className="p-4 bg-surface-strong/60 border border-border/30 rounded-xl">
+                    <h4 className="text-xs font-opera uppercase tracking-wider text-fg-muted mb-2">{t("spotlight.solution") || "The Solution"}</h4>
+                    <p className="text-sm text-fg-muted/80 leading-relaxed">
+                      {locale === "id" && validly?.solution_id ? validly.solution_id : validly.solution}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-2 mb-6">
               {validly?.stack.map((tech, idx) => (
@@ -51,18 +77,16 @@ export default function SpotlightSection() {
               ))}
             </div>
 
-            {/* Proof chips */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {[
-                "Copyright registered",
-                "UAT signed off",
-                "Extreme Programming"
-              ].map((chip, idx) => (
-                <span key={idx} className="px-3 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg">
-                  {chip}
-                </span>
-              ))}
-            </div>
+            {/* Proof chips from highlights */}
+            {validly?.highlights && validly.highlights.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {validly.highlights.map((chip, idx) => (
+                  <span key={idx} className="px-3 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-4">
               {validly?.slug && (
@@ -88,31 +112,34 @@ export default function SpotlightSection() {
             </div>
           </article>
 
-          {/* Small Card 1: Students mentored */}
-          <article className="bg-surface border border-border/20 rounded-3xl p-6 opera-border-hover">
-            <span className="inline-block mb-3 px-2.5 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg-muted">
-              {t("spotlight.mentored.label")}
-            </span>
-            <h4 className="text-xl font-display font-bold text-fg mb-2">
-              {t("spotlight.mentored.title")}
-            </h4>
-            <p className="text-fg-muted/80 text-sm leading-relaxed">
-              {t("spotlight.mentored.desc")}
-            </p>
-          </article>
+          {/* Right column: Two small cards stacked */}
+          <div className="flex flex-col gap-6">
+            {/* Small Card 1: Students mentored */}
+            <article className="bg-surface border border-border/20 rounded-3xl p-6 opera-border-hover">
+              <span className="inline-block mb-3 px-2.5 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg-muted">
+                {t("spotlight.mentored.label")}
+              </span>
+              <h4 className="text-xl font-display font-bold text-fg mb-2">
+                {t("spotlight.mentored.title")}
+              </h4>
+              <p className="text-fg-muted/80 text-sm leading-relaxed">
+                {t("spotlight.mentored.desc")}
+              </p>
+            </article>
 
-          {/* Small Card 2: Events chaired */}
-          <article className="bg-surface border border-border/20 rounded-3xl p-6 opera-border-hover">
-            <span className="inline-block mb-3 px-2.5 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg-muted">
-              {t("spotlight.events.label")}
-            </span>
-            <h4 className="text-xl font-display font-bold text-fg mb-2">
-              {t("spotlight.events.title")}
-            </h4>
-            <p className="text-fg-muted/80 text-sm leading-relaxed">
-              {t("spotlight.events.desc")}
-            </p>
-          </article>
+            {/* Small Card 2: Events chaired */}
+            <article className="bg-surface border border-border/20 rounded-3xl p-6 opera-border-hover">
+              <span className="inline-block mb-3 px-2.5 py-1 rounded-full bg-surface-strong/60 border border-border/30 text-[10px] font-opera font-bold uppercase tracking-wider text-fg-muted">
+                {t("spotlight.events.label")}
+              </span>
+              <h4 className="text-xl font-display font-bold text-fg mb-2">
+                {t("spotlight.events.title")}
+              </h4>
+              <p className="text-fg-muted/80 text-sm leading-relaxed">
+                {t("spotlight.events.desc")}
+              </p>
+            </article>
+          </div>
         </div>
       </div>
     </section>

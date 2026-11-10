@@ -4,13 +4,19 @@ export interface Project {
   slug: string;
   act?: string;
   title: string;
+  title_id?: string;
   tagline: string;
+  tagline_id?: string;
   description: string;
+  description_id?: string;
   category: ProjectCategory;
   stack: string[];
   role: string;
+  role_id?: string;
   problem: string;
+  problem_id?: string;
   solution: string;
+  solution_id?: string;
   highlights: string[];
   liveUrl?: string;
   repoUrl?: string;
@@ -27,13 +33,19 @@ export const projects: Project[] = [
     tagline: "Multi-tenant certificate generation and verification platform",
     description:
       "End-to-end web platform for digital certificate generation with QR code verification, designed to scale into a B2B Software-as-a-Service product. Built as my undergraduate thesis for the client CV. Oemah Website Purwokerto.",
+    description_id:
+      "Platform web end-to-end untuk pembuatan sertifikat digital dengan verifikasi QR code, dirancang untuk menskalakan menjadi produk Software-as-a-Service B2B. Dibangun sebagai tugas akhir sarjana untuk klien CV. Oemah Website Purwokerto.",
     category: "web",
     stack: ["Laravel"],
     role: "Full-Stack Developer",
     problem:
       "Organizations need a scalable, multi-tenant platform to generate and verify digital certificates with QR codes, replacing manual paper-based processes.",
+    problem_id:
+      "Organisasi membutuhkan platform multi-tenant yang skalabel untuk membuat dan memverifikasi sertifikat digital dengan kode QR, menggantikan proses manual berbasis kertas.",
     solution:
       "Built a Laravel-based web platform with multi-tenancy, QR code generation and verification, and a B2B SaaS architecture ready for commercialization.",
+    solution_id:
+      "Membangun platform web berbasis Laravel dengan multi-tenancy, pembuatan dan verifikasi kode QR, serta arsitektur B2B SaaS yang siap dikomersialkan.",
     highlights: [
       "Officially registered computer-program copyright (Reg. No. 001273151, Directorate General of Intellectual Property, Ministry of Law of the Republic of Indonesia, June 2026)",
       "QR-based certificate verification",
